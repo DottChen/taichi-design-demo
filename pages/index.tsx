@@ -35,11 +35,6 @@ export default function Home() {
             link="logo-to-menu-icon-animation"
             date="2023/04/27"
           />
-          <DemoItem
-            title="Logo to Menu Icon Animation"
-            link="logo-to-menu-icon-animation"
-            date="2023/04/27"
-          />
         </div>
       </main>
     </>

@@ -1,6 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
+import IconMenu from "@/assets/icons/menu-icon-32x32.svg";
+import taitopiaLogo from "@/assets/images/taitopia-logo.png";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import { IconArrowBack } from "@tabler/icons-react";
@@ -36,14 +39,20 @@ const Demo: React.FC = () => {
           {metaData.title}
         </h1>
         <Divider />
-        <section className="mt-24 flex w-full overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-[var(--bg-sub)]">
+        <section className="mt-24 flex h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
           {/* Edit here to change content*/}
-          <video
-            className="h-full w-full rounded-lg object-cover"
-            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/585f2742-62fc-4dfc-b92c-08ef8ca22d0d/SpotifyPlayCard.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20230124/us-west-2/s3/aws4_request&X-Amz-Date=20230124T112138Z&X-Amz-Expires=86400&X-Amz-Signature=f937cf1230543bc8be5b31f6c60472d01f8ece0159a27717aba34cc24595d09a&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22SpotifyPlayCard.mp4%22&x-id=GetObject"
-            autoPlay
-            loop
-          />
+          <div className="group flex h-12 w-12 cursor-pointer items-center justify-center">
+            <Image
+              src={taitopiaLogo}
+              width={48}
+              height={48}
+              alt="Taitopia Logo"
+              className="absolute transform bg-zinc-900 opacity-100 duration-300 ease-in-out group-hover:scale-50 group-hover:opacity-0"
+            />
+            <div className="absolute flex scale-50 transform items-center justify-center opacity-0 duration-300 ease-[cubic-bezier(0.48,2.32,0.64,1)] group-hover:scale-100 group-hover:opacity-100">
+              <IconMenu />
+            </div>
+          </div>
         </section>
         <Footer />
       </div>
