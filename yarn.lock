@@ -4134,6 +4134,11 @@ slash@^4.0.0:
   resolved "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
 
+sonner@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/sonner/-/sonner-0.3.2.tgz#1feae3ce0bfa03cd77cda95224073cb9d13445c1"
+  integrity sha512-pGT5AI2rPegCesw/Im9xkDgurxAsuJBSH7Z9/+Oeszq5AKorC5YdlieMhwDr+jex+qQCIFA2nAjXsTX/u6aS9A==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz"
