@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import DemoItem from "@/components/DemoItem";
-import Divider from "@/components/Divider";
+import DemoItem from '@/components/DemoItem';
+import Divider from '@/components/Divider';
 
 export default function Home() {
   const description = `
@@ -34,6 +34,11 @@ export default function Home() {
             title="Logo to Menu Icon Animation"
             link="logo-to-menu-icon-animation"
             date="2023/04/27"
+          />
+          <DemoItem
+            title="Text Active State"
+            link="text-active-state"
+            date="2023/04/28"
           />
         </div>
       </main>
