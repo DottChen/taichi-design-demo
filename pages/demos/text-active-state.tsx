@@ -18,9 +18,11 @@ const ListItem: React.FC<ListItemProps> = ({ text, className }) => {
   return (
     <button
       className="flex min-h-[40px] w-64 items-center justify-start rounded-lg bg-transparent px-4 text-sm outline-none transition duration-150 ease-out hover:bg-neutral-900 active:bg-black"
-      onClick={() => {
-        setActive(!isActive);
-      }}
+      onClick={() =>
+        setTimeout(() => {
+          setActive(!isActive);
+        }, 300)
+      }
     >
       <div
         className={twMerge(
@@ -72,11 +74,11 @@ const Demo: React.FC = () => {
           {/* Edit here to change content*/}
           <div className="flex flex-col items-center justify-center">
             <div className="mb-2 flex w-full select-none text-start text-xs font-normal text-[var(--label-faint)]">
-              切换时有字重变化（transition 1000ms）：
+              切换时有字重变化（transition=1000ms, timeout=300ms）：
             </div>
             <ListItem text="Camera_group" />
             <div className="mb-2 mt-8 flex w-full select-none text-start text-xs font-normal text-[var(--label-faint)]">
-              切换时无字重变化（transition 1000ms）：
+              切换时无字重变化（transition=1000ms, timeout=300ms）：
             </div>
             <ListItem text="Camera_group" className="font-normal" />
           </div>
