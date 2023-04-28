@@ -17,7 +17,7 @@ const ListItem: React.FC<ListItemProps> = ({ text, className }) => {
 
   return (
     <button
-      className="flex min-h-[40px] w-64 items-center justify-start rounded-lg bg-transparent px-4 text-sm outline-none transition duration-150 ease-out hover:bg-neutral-900 active:bg-black"
+      className="flex h-[40px] w-64 items-center justify-start rounded-lg bg-transparent px-4 text-sm outline-none transition duration-150 ease-out hover:bg-neutral-900 active:bg-black"
       onClick={() =>
         setTimeout(() => {
           setActive(!isActive);
@@ -72,7 +72,7 @@ const Demo: React.FC = () => {
         <Divider />
         <section className="mt-24 flex h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-[#1C1C1F]">
           {/* Edit here to change content*/}
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-center">
             <div className="mb-2 flex w-full select-none text-start text-xs font-normal text-[var(--label-faint)]">
               切换时有字重变化（transition=1000ms, timeout=300ms）：
             </div>
