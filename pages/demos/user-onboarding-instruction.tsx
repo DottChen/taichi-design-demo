@@ -218,6 +218,7 @@ const Demo: React.FC = () => {
               </div>
               <div className="flex items-center justify-between">
                 <TipsPopover
+                  side="right"
                   trigger={<SidebarHelpIcon />}
                   isOpen={isTipsPopoverTwoVisible}
                   onClose={() => {
