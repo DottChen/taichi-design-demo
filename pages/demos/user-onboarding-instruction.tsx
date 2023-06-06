@@ -1,21 +1,21 @@
-import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import { AnimatePresence } from "framer-motion";
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
 
-import AimIcon from '@/assets/icons/aim.svg';
-import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
-import SidebarHelpIcon from '@/assets/icons/help.svg';
-import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
-import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
-import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
-import TipsBanner from '@/components/burrito-app/tips/TipsBanner';
-import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
-import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
-import Button from '@/components/local/Button';
-import Divider from '@/components/local/Divider';
-import Footer from '@/components/local/Footer';
-import { IconArrowBack } from '@tabler/icons-react';
+import AimIcon from "@/assets/icons/aim.svg";
+import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
+import SidebarHelpIcon from "@/assets/icons/help.svg";
+import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
+import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
+import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
+import TipsBanner from "@/components/burrito-app/tips/TipsBanner";
+import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
+import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
+import Button from "@/components/local/Button";
+import Divider from "@/components/local/Divider";
+import Footer from "@/components/local/Footer";
+import { IconArrowBack } from "@tabler/icons-react";
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -64,21 +64,8 @@ const Demo: React.FC = () => {
         </h1>
         <Divider />
         <div className="mt-24 flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <div className="text-base font-semibold text-[var(--label-title)]">
-              {'TipsEmbed（插入型）'}
-            </div>
-            <Button
-              isIcon={false}
-              text="Reset"
-              onClick={() => {
-                setIsTipsEmbedOneVisible(true);
-                setIsTipsEmbedTwoVisible(true);
-                setIsTipsEmbedThreeVisible(true);
-                setIsTipsEmbedFourVisible(true);
-                setIsTipsEmbedFiveVisible(true);
-              }}
-            />
+          <div className="text-base font-semibold text-[var(--label-title)]">
+            {'TipsEmbed（插入型）'}
           </div>
           <section className="flex h-[1024px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
             {/* Edit here to change content*/}
@@ -176,6 +163,17 @@ const Demo: React.FC = () => {
                   </TipsEmbed>
                 )}
               </AnimatePresence>
+              <Button
+                isIcon={false}
+                text="Reset"
+                onClick={() => {
+                  setIsTipsEmbedOneVisible(true);
+                  setIsTipsEmbedTwoVisible(true);
+                  setIsTipsEmbedThreeVisible(true);
+                  setIsTipsEmbedFourVisible(true);
+                  setIsTipsEmbedFiveVisible(true);
+                }}
+              />
             </div>
           </section>
         </div>
