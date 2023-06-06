@@ -1,0 +1,8 @@
+.TipsContainer {
+  position: relative;
+  background: linear-gradient(black, black) padding-box,
+    linear-gradient(to right, #bef264, #0ea5e9), border-box;
+  border-width: 1px;
+  border-image: linear-gradient(to right, #bef264, #0ea5e9) 1;
+  border-radius: 12px;
+}

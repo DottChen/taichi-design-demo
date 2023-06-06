@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import DemoItem from '@/components/DemoItem';
-import Divider from '@/components/Divider';
+import DemoItem from '@/components/local/DemoItem';
+import Divider from '@/components/local/Divider';
 
 export default function Home() {
   const description = `
@@ -39,6 +39,11 @@ export default function Home() {
             title="Text Active State"
             link="text-active-state"
             date="2023/04/28"
+          />
+          <DemoItem
+            title="User Onboarding Instruction"
+            link="user-onboarding-instruction"
+            date="2023/06/06"
           />
         </div>
       </main>

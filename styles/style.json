@@ -1,0 +1,137 @@
+{
+  "colors": {
+    "grey": {
+      "100": "#FAFAFA",
+      "200": "#F2F2F2",
+      "300": "#EBEBEB",
+      "400": "#C4C4C4",
+      "500": "#FFFFFF"
+    },
+    "dark": {
+      "100": "#CCCCCC",
+      "200": "#1A1A1A80",
+      "300": "#666666",
+      "400": "#404040",
+      "500": "#333333",
+      "600": "#1A1A1AE6",
+      "700": "#212121",
+      "800": "#26262a",
+      "900": "#1A1A1A"
+    },
+    "primary": {
+      "100": "#0EA5E94C",
+      "200": "#0EA5E980",
+      "300": "#0EA5E9",
+      "400": "#0EA5E9",
+      "500": "#0284C7"
+    },
+    "secondary": {
+      "200": "#FFF6E5",
+      "300": "#FFDC99",
+      "400": "#7DD3FC",
+      "500": "#EF4444"
+    },
+    "gizmo-red": {
+      "300": "#FF4A55",
+      "400": "#FF636C"
+    },
+    "gizmo-green": {
+      "300": "#4AFF95",
+      "400": "#58EA96"
+    },
+    "gizmo-blue": {
+      "300": "#85AEFF",
+      "400": "#73A2FF"
+    },
+    "zinc": {
+      "500": "#71717A",
+      "700": "#3F3F46",
+      "800": "#26262a",
+      "900": "#1c1c1f"
+    },
+    "neutral": {
+      "700": "#404040",
+      "900": "#121212"
+    },
+    "sky": {
+      "300": "#7DD3FC",
+      "500": "#0EA5E9",
+      "600": "#0284C7",
+      "700": "#0369A1"
+    }
+  },
+  "height": {
+    "screen-85": "85vh"
+  },
+  "borderWidth": {
+    "0.5": "0.5px"
+  },
+  "borderRadius": {
+    "tai-2": "2px",
+    "tai-4": "4px",
+    "tai-6": "6px",
+    "tai-8": "8px",
+    "tai-10": "10px",
+    "tai-12": "12px",
+    "tai-16": "16px"
+  },
+  "fontSize": {
+    "tai-16": ["16px", "16px"],
+    "tai-14": ["14px", "14px"],
+    "tai-12": ["12px", "12px"],
+    "tai-10": ["10px", "10px"],
+    "para-12": ["12px", "18px"],
+    "head-48": ["48px", "58px"],
+    "head-32": ["32px", "40px"],
+    "head-24": ["24px", "30px"],
+    "tai-xs": ["12px", "16px"],
+    "tai-sm": ["14px", "20px"],
+    "tai-base": ["16px", "24px"]
+  },
+  "icon": {
+    "ic-s": 8,
+    "ic-m": 12,
+    "ic-l": 24,
+    "ic-xl": 32
+  },
+  "fontFamily": {
+    "default": [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "'PingFang SC'",
+      "'Microsoft Yahei'",
+      "'Noto Sans CJK SC'",
+      "'WenQuanYi Micro Hei'",
+      "'Helvetica Neue'",
+      "Ubuntu",
+      "sans-serif"
+    ]
+  },
+  "gridTemplateColumns": {
+    "thumb-sm": "repeat(auto-fill, minmax(120px, 1fr))",
+    "thumb-lg": "repeat(auto-fill, minmax(240px, 1fr))"
+  },
+  "transitionDuration": {
+    "default": "100ms",
+    "defaultNumber": 100
+  },
+  "shadow": {
+    "dark": "1px 1px 15px rgba(0, 0, 0, 0.1)",
+    "light": "1px 1px 15px rgba(0, 0, 0, 0.05)"
+  },
+  "dropShadow": {
+    "sm": "0 0 5px rgba(0, 0, 0, 0.3)",
+    "lg": "1px 1px 8px rgba(0, 0, 0, 0.4)",
+    "2xl": "0 0 50px rgba(0, 0, 0, 0.3)"
+  },
+  "zIndex": {
+    "loading": "50",
+    "blocking": "40",
+    "toast": "30",
+    "hint": "20",
+    "popover": "10"
+  },
+  "cursor": {
+    "ew-resize-tai": "url(\"data:image/svg+xml,%3csvg fill='none' height='20' viewBox='0 0 29 20' width='29' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cfilter id='a' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse' height='18.1611' width='28.2012' x='.399414' y='.919434'%3e%3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e%3cfeColorMatrix in='SourceAlpha' result='hardAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3e%3cfeOffset dy='1'/%3e%3cfeGaussianBlur stdDeviation='1.5'/%3e%3cfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3e%3cfeBlend in2='BackgroundImageFix' mode='normal' result='effect1_dropShadow_70_544'/%3e%3cfeBlend in='SourceGraphic' in2='effect1_dropShadow_70_544' mode='normal' result='shape'/%3e%3c/filter%3e%3cg filter='url(%23a)'%3e%3cpath clip-rule='evenodd' d='m10 10h9v3l5-4-5-4v3h-9v-3l-5 4 5 4z' fill='black' fill-rule='evenodd'/%3e%3cpath d='m18.5 5v2.5h-8v-2.5-1.04031l-.81235.64988-5 4-.48804.39043.48804.39043 5 3.99997.81235.6499v-1.0403-2.5h8v2.5 1.0403l.8123-.6499 5-3.99997.4881-.39043-.4881-.39043-5-4-.8123-.64988z' stroke='white'/%3e%3c/g%3e%3c/svg%3e\") 14 10, ew-resize"
+  }
+}

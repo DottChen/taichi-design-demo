@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import IconMenu from "@/assets/icons/menu-icon-32x32.svg";
-import taitopiaLogo from "@/assets/images/taitopia-logo.png";
-import Divider from "@/components/Divider";
-import Footer from "@/components/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import IconMenu from '@/assets/icons/menu-icon-32x32.svg';
+import taitopiaLogo from '@/assets/images/taitopia-logo.png';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page

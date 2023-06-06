@@ -1,9 +1,9 @@
-import "@/styles/globals.css";
-import "@/styles/variables.css";
+import '@/styles/globals.css';
+import '@/styles/variables.css';
 
-import { Toaster } from "sonner";
+import { Toaster } from 'sonner';
 
-import Layout from "@/components/Layout";
+import Layout from '@/components/local/Layout';
 
 import type { AppProps } from 'next/app';
 export default function App({ Component, pageProps }: AppProps) {

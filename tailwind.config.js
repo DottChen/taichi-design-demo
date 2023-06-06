@@ -1,4 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+
+const theme = require('./styles/style.json');
+
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -36,10 +41,14 @@ module.exports = {
         md: 'var(--shadow-medium)',
         lg: 'var(--shadow-large)',
       },
+      ...theme,
     },
   },
   plugins: [
     require('tailwindcss-radix')(),
     require('prettier-plugin-tailwindcss'),
+    plugin(function ({ addBase }) {
+      addBase({});
+    }),
   ],
 };

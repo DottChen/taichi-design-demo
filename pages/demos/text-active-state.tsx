@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import Divider from '@/components/Divider';
-import Footer from '@/components/Footer';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
 import { IconArrowBack } from '@tabler/icons-react';
 
 interface ListItemProps extends React.AllHTMLAttributes<HTMLDivElement> {
