@@ -1,22 +1,22 @@
-import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import { AnimatePresence } from "framer-motion";
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
 
-import AimIcon from '@/assets/icons/aim.svg';
-import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
-import SidebarHelpIcon from '@/assets/icons/help.svg';
-import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
-import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
-import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import TipsDialog from '@/components/burrito-app/tips/TipsDialog';
-import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
-import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
-import Button from '@/components/local/Button';
-import Divider from '@/components/local/Divider';
-import Footer from '@/components/local/Footer';
-import { IconArrowBack } from '@tabler/icons-react';
+import AimIcon from "@/assets/icons/aim.svg";
+import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
+import SidebarHelpIcon from "@/assets/icons/help.svg";
+import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
+import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
+import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
+import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
+import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
+import Button from "@/components/local/Button";
+import Divider from "@/components/local/Divider";
+import Footer from "@/components/local/Footer";
+import { IconArrowBack } from "@tabler/icons-react";
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -378,7 +378,7 @@ const Demo: React.FC = () => {
             {'用户引导步骤'}
           </div>
           <section className="flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
-            <div className="flex w-[320px] flex-col items-center justify-center gap-32 border-x border-dashed border-red-500 py-16">
+            <div className="flex w-[320px] flex-col items-center justify-center gap-16 border-x border-dashed border-red-500 py-16">
               <Button
                 isIcon={false}
                 text="Start Journey"
@@ -506,154 +506,164 @@ const Demo: React.FC = () => {
                   <span>{'at selected objects'}</span>
                 </span>
               </TipsPopover>
-              <AnimatePresence>
-                {isTipsStepFourVisible && (
-                  <TipsEmbed
-                    isStep
-                    currentStep={4}
-                    totalSteps={9}
-                    onBack={() => {
-                      setIsTipsStepThreeVisible(true);
-                      setIsTipsStepFourVisible(false);
-                    }}
-                    onNext={() => {
-                      setIsTipsStepFourVisible(false);
-                      setIsTipsStepFiveVisible(true);
-                    }}
-                    onClose={() => {
-                      setIsTipsStepFourVisible(false);
-                    }}
-                  >
-                    <span>
-                      <span>{'Drag a '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'material'}
-                      </span>
-                      <span>{' to an object to apply it'}</span>
-                    </span>
-                  </TipsEmbed>
-                )}
-              </AnimatePresence>
-              <AnimatePresence>
-                {isTipsStepFiveVisible && (
-                  <TipsEmbed
-                    isStep
-                    currentStep={5}
-                    totalSteps={9}
-                    onBack={() => {
-                      setIsTipsStepFourVisible(true);
-                      setIsTipsStepFiveVisible(false);
-                    }}
-                    onNext={() => {
-                      setIsTipsStepFiveVisible(false);
-                      setIsTipsStepSixVisible(true);
-                    }}
-                    onClose={() => {
-                      setIsTipsStepFiveVisible(false);
-                    }}
-                  >
-                    <span>
-                      <span>{'Click an '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'environment'}
-                      </span>
-                      <span>{' or drag into the viewport to apply it'}</span>
-                    </span>
-                  </TipsEmbed>
-                )}
-              </AnimatePresence>
-              <AnimatePresence>
-                {isTipsStepSixVisible && (
-                  <TipsEmbed
-                    isStep
-                    currentStep={6}
-                    totalSteps={9}
-                    onBack={() => {
-                      setIsTipsStepFiveVisible(true);
-                      setIsTipsStepSixVisible(false);
-                    }}
-                    onNext={() => {
-                      setIsTipsStepSixVisible(false);
-                      setIsTipsStepSevenVisible(true);
-                    }}
-                    onClose={() => {
-                      setIsTipsStepSixVisible(false);
-                    }}
-                  >
-                    <span>
-                      <span>{'Click a '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'model'}
-                      </span>
+              <div className="flex w-full h-32">
+                <AnimatePresence>
+                  {isTipsStepFourVisible && (
+                    <TipsEmbed
+                      isStep
+                      currentStep={4}
+                      totalSteps={9}
+                      onBack={() => {
+                        setIsTipsStepThreeVisible(true);
+                        setIsTipsStepFourVisible(false);
+                      }}
+                      onNext={() => {
+                        setIsTipsStepFourVisible(false);
+                        setIsTipsStepFiveVisible(true);
+                      }}
+                      onClose={() => {
+                        setIsTipsStepFourVisible(false);
+                      }}
+                    >
                       <span>
-                        {' or drag into the viewport to add it to the scene'}
+                        <span>{'Drag a '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'material'}
+                        </span>
+                        <span>{' to an object to apply it'}</span>
                       </span>
-                    </span>
-                  </TipsEmbed>
-                )}
-              </AnimatePresence>
-              <AnimatePresence>
-                {isTipsStepSevenVisible && (
-                  <TipsEmbed
-                    isStep
-                    currentStep={7}
-                    totalSteps={9}
-                    onBack={() => {
-                      setIsTipsStepSixVisible(true);
-                      setIsTipsStepSevenVisible(false);
-                    }}
-                    onNext={() => {
-                      setIsTipsStepSevenVisible(false);
-                      setIsTipsStepEightVisible(true);
-                    }}
-                    onClose={() => {
-                      setIsTipsStepSevenVisible(false);
-                    }}
-                  >
-                    <span>
-                      <span>{'Click to add an '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'animation'}
+                    </TipsEmbed>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div className="flex w-full h-32">
+                <AnimatePresence>
+                  {isTipsStepFiveVisible && (
+                    <TipsEmbed
+                      isStep
+                      currentStep={5}
+                      totalSteps={9}
+                      onBack={() => {
+                        setIsTipsStepFourVisible(true);
+                        setIsTipsStepFiveVisible(false);
+                      }}
+                      onNext={() => {
+                        setIsTipsStepFiveVisible(false);
+                        setIsTipsStepSixVisible(true);
+                      }}
+                      onClose={() => {
+                        setIsTipsStepFiveVisible(false);
+                      }}
+                    >
+                      <span>
+                        <span>{'Click an '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'environment'}
+                        </span>
+                        <span>{' or drag into the viewport to apply it'}</span>
                       </span>
-                      <span>{' to selected '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'objects'}
+                    </TipsEmbed>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div className="flex w-full h-32">
+                <AnimatePresence>
+                  {isTipsStepSixVisible && (
+                    <TipsEmbed
+                      isStep
+                      currentStep={6}
+                      totalSteps={9}
+                      onBack={() => {
+                        setIsTipsStepFiveVisible(true);
+                        setIsTipsStepSixVisible(false);
+                      }}
+                      onNext={() => {
+                        setIsTipsStepSixVisible(false);
+                        setIsTipsStepSevenVisible(true);
+                      }}
+                      onClose={() => {
+                        setIsTipsStepSixVisible(false);
+                      }}
+                    >
+                      <span>
+                        <span>{'Click a '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'model'}
+                        </span>
+                        <span>
+                          {' or drag into the viewport to add it to the scene'}
+                        </span>
                       </span>
-                      <span>{' or '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'current camera'}
+                    </TipsEmbed>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div className="flex w-full h-32">
+                <AnimatePresence>
+                  {isTipsStepSevenVisible && (
+                    <TipsEmbed
+                      isStep
+                      currentStep={7}
+                      totalSteps={9}
+                      onBack={() => {
+                        setIsTipsStepSixVisible(true);
+                        setIsTipsStepSevenVisible(false);
+                      }}
+                      onNext={() => {
+                        setIsTipsStepSevenVisible(false);
+                        setIsTipsStepEightVisible(true);
+                      }}
+                      onClose={() => {
+                        setIsTipsStepSevenVisible(false);
+                      }}
+                    >
+                      <span>
+                        <span>{'Click to add an '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'animation'}
+                        </span>
+                        <span>{' to selected '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'objects'}
+                        </span>
+                        <span>{' or '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'current camera'}
+                        </span>
                       </span>
-                    </span>
-                  </TipsEmbed>
-                )}
-              </AnimatePresence>
-              <AnimatePresence>
-                {isTipsStepEightVisible && (
-                  <TipsEmbed
-                    isStep
-                    currentStep={8}
-                    totalSteps={9}
-                    onBack={() => {
-                      setIsTipsStepSevenVisible(true);
-                      setIsTipsStepEightVisible(false);
-                    }}
-                    onNext={() => {
-                      setIsTipsStepEightVisible(false);
-                      setIsTipsStepNineVisible(true);
-                    }}
-                    onClose={() => {
-                      setIsTipsStepEightVisible(false);
-                    }}
-                  >
-                    <span>
-                      <span>{'Click to preview a '}</span>
-                      <span className="font-semibold text-lime-300">
-                        {'lighting preset'}
+                    </TipsEmbed>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div className="flex w-full h-32">
+                <AnimatePresence>
+                  {isTipsStepEightVisible && (
+                    <TipsEmbed
+                      isStep
+                      currentStep={8}
+                      totalSteps={9}
+                      onBack={() => {
+                        setIsTipsStepSevenVisible(true);
+                        setIsTipsStepEightVisible(false);
+                      }}
+                      onNext={() => {
+                        setIsTipsStepEightVisible(false);
+                        setIsTipsStepNineVisible(true);
+                      }}
+                      onClose={() => {
+                        setIsTipsStepEightVisible(false);
+                      }}
+                    >
+                      <span>
+                        <span>{'Click to preview a '}</span>
+                        <span className="font-semibold text-lime-300">
+                          {'lighting preset'}
+                        </span>
                       </span>
-                    </span>
-                  </TipsEmbed>
-                )}
-              </AnimatePresence>
+                    </TipsEmbed>
+                  )}
+                </AnimatePresence>
+              </div>
               <TipsPopover
                 anchor={
                   <div className="text-sm font-semibold text-sky-300">
