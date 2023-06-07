@@ -34,23 +34,23 @@ const Demo: React.FC = () => {
     setTimeout(() => {
       setIsOpenEnvironment(true);
     }
-    , 300);
+    , 150);
     setTimeout(() => {
       setIsOpenModel(true);
     }
-    , 600);
+    , 300);
     setTimeout(() => {
       setIsOpenAnimation(true);
     }
-    , 900);
+    , 450);
     setTimeout(() => {
       setIsOpenLightPreset(true);
     }
-    , 1200);
+    , 600);
     setTimeout(() => {
       setIsOpenImport(true);
     }
-    , 1500);
+    , 750);
 
     setTimeout(() => {
       setIsOpenMaterial(false);
@@ -60,7 +60,7 @@ const Demo: React.FC = () => {
       setIsOpenLightPreset(false);
       setIsOpenImport(false);
     }
-    , 3500);
+    , 3350);
   }
 
 
