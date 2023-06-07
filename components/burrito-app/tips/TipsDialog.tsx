@@ -1,13 +1,13 @@
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
-import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
-import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
-import GotItIcon from '@/assets/icons/got-it.svg';
-import Button from '@/components/burrito-ui/Button';
-import * as Dialog from '@radix-ui/react-dialog';
+import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
+import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
+import GotItIcon from "@/assets/icons/got-it.svg";
+import Button from "@/components/burrito-ui/Button";
+import * as Dialog from "@radix-ui/react-dialog";
 
-import styles from './style.module.css';
+import styles from "./style.module.css";
 
 interface TipsDialogProps {
   children: React.ReactNode;
@@ -76,7 +76,7 @@ export const TipsDialog: React.FC<TipsDialogProps> = ({
                   {children}
                 </div>
                 {isStep ? (
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3 justify-between">
                     <Button
                       type="link"
                       className=""

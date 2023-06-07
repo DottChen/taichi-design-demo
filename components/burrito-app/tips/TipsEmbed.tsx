@@ -55,7 +55,9 @@ export const TipsEmbed: React.FC<TipsEmbedProps> = ({
         {children}
       </div>
       {isStep ? (
-        <div className="flex items-center justify-between">
+        <div className={`flex items-center gap-3 justify-between ${
+          currentStep === totalSteps && 'pl-2'
+        }`}>
           {currentStep !== totalSteps && (
             <Button type="link" className="" size="sm" onClick={onClose}>
               {'End'}
