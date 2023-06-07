@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
 import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
 import GotItIcon from '@/assets/icons/got-it.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
 import Button from '@/components/burrito-ui/Button';
 import * as Popover from '@radix-ui/react-popover';
 
@@ -90,15 +91,21 @@ export const TipsPopover: React.FC<TipsPopoverProps> = ({
                   {children}
                 </div>
                 {isStep ? (
-                  <div className="flex items-center justify-between">
-                    <Button
-                      type="link"
-                      className=""
-                      size="sm"
-                      onClick={onClose}
-                    >
-                      {'End'}
-                    </Button>
+                  <div
+                    className={`flex items-center justify-between ${
+                      currentStep === totalSteps && 'pl-2'
+                    }`}
+                  >
+                    {currentStep !== totalSteps && (
+                      <Button
+                        type="link"
+                        className=""
+                        size="sm"
+                        onClick={onClose}
+                      >
+                        {'End'}
+                      </Button>
+                    )}
                     <div className="flex items-center justify-end gap-3">
                       <div className="text-xs font-semibold text-white">
                         {currentStep}/{totalSteps}
@@ -120,6 +127,17 @@ export const TipsPopover: React.FC<TipsPopoverProps> = ({
                         </button>
                       </div>
                     </div>
+                    {currentStep === totalSteps && (
+                      <Button
+                        type="tips"
+                        className=""
+                        size="sm"
+                        onClick={onClose}
+                        icon={closeIcon || <SparkleIcon />}
+                      >
+                        {closeText || 'Well Done!'}
+                      </Button>
+                    )}
                   </div>
                 ) : (
                   <Button

@@ -1,12 +1,13 @@
-import clsx from "clsx";
-import { motion } from "framer-motion";
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
-import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
-import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
-import GotItIcon from "@/assets/icons/got-it.svg";
-import Button from "@/components/burrito-ui/Button";
+import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
+import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
+import GotItIcon from '@/assets/icons/got-it.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import Button from '@/components/burrito-ui/Button';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
 interface TipsEmbedProps {
   children: React.ReactNode;
@@ -55,36 +56,44 @@ export const TipsEmbed: React.FC<TipsEmbedProps> = ({
       </div>
       {isStep ? (
         <div className="flex items-center justify-between">
-        <Button
-          type="link"
-          className=""
-          size="sm"
-          onClick={onClose}
-        >
-          {'End'}
-        </Button>
-        <div className="flex items-center justify-end gap-3">
-          <div className="text-xs font-semibold text-white">
-            {currentStep}/{totalSteps}
+          {currentStep !== totalSteps && (
+            <Button type="link" className="" size="sm" onClick={onClose}>
+              {'End'}
+            </Button>
+          )}
+          <div className="flex items-center justify-end gap-3">
+            <div className="text-xs font-semibold text-white">
+              {currentStep}/{totalSteps}
+            </div>
+            <div className="flex items-center justify-end gap-2">
+              <button
+                disabled={currentStep === 1}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
+                onClick={onBack}
+              >
+                <ChevronLeftIcon />
+              </button>
+              <button
+                disabled={currentStep === totalSteps}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
+                onClick={onNext}
+              >
+                <ChevronRightIcon />
+              </button>
+            </div>
           </div>
-          <div className="flex items-center justify-end gap-2">
-            <button
-              disabled={currentStep === 1}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
-              onClick={onBack}
+          {currentStep === totalSteps && (
+            <Button
+              type="tips"
+              className=""
+              size="sm"
+              onClick={onClose}
+              icon={closeIcon || <SparkleIcon />}
             >
-              <ChevronLeftIcon />
-            </button>
-            <button
-              disabled={currentStep === totalSteps}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
-              onClick={onNext}
-            >
-              <ChevronRightIcon />
-            </button>
-          </div>
+              {closeText || 'Well Done!'}
+            </Button>
+          )}
         </div>
-      </div>
       ) : (
         <Button
           type="tips"

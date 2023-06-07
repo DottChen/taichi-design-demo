@@ -1,22 +1,22 @@
-import { AnimatePresence } from "framer-motion";
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
+import { AnimatePresence } from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import AimIcon from "@/assets/icons/aim.svg";
-import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
-import SidebarHelpIcon from "@/assets/icons/help.svg";
-import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
-import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
-import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
-import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
-import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import AimIcon from '@/assets/icons/aim.svg';
+import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
+import SidebarHelpIcon from '@/assets/icons/help.svg';
+import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
+import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
+import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import TipsDialog from '@/components/burrito-app/tips/TipsDialog';
+import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
+import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -378,7 +378,7 @@ const Demo: React.FC = () => {
             {'用户引导步骤'}
           </div>
           <section className="flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
-            <div className="flex w-[320px] border-x border-dashed border-red-500 py-16 items-center justify-center flex-col gap-32">
+            <div className="flex w-[320px] flex-col items-center justify-center gap-32 border-x border-dashed border-red-500 py-16">
               <Button
                 isIcon={false}
                 text="Start Journey"
@@ -655,37 +655,35 @@ const Demo: React.FC = () => {
                 )}
               </AnimatePresence>
               <TipsPopover
-                  anchor={
-                    <div className="text-sm font-semibold text-sky-300">
-                      {'Post-processing'}
-                    </div>
-                  }
-                  isStep
-                  side="bottom"
-                  closeIcon={
-                    <SparkleIcon />
-                  }
-                  closeText="Well Done!"
-                  currentStep={9}
-                  totalSteps={9}
-                  onBack={() => {
-                    setIsTipsStepEightVisible(true);
-                    setIsTipsStepNineVisible(false);
-                  }}
-                  onNext={() => {}}
-                  isOpen={isTipsStepNineVisible}
-                  onClose={() => {
-                    setIsTipsStepNineVisible(false);
-                  }}
-                >
-                  <span className="inline">
-                    <span>{'You can adjust '}</span>
-                    <span className="font-semibold text-lime-300">
-                      {'post-processing effects'}
-                    </span>
-                    <span>{' of your renderings here'}</span>
+                anchor={
+                  <div className="text-sm font-semibold text-sky-300">
+                    {'Post-processing'}
+                  </div>
+                }
+                isStep
+                side="bottom"
+                closeIcon={<SparkleIcon />}
+                closeText="Well Done!"
+                currentStep={9}
+                totalSteps={9}
+                onBack={() => {
+                  setIsTipsStepEightVisible(true);
+                  setIsTipsStepNineVisible(false);
+                }}
+                onNext={() => {}}
+                isOpen={isTipsStepNineVisible}
+                onClose={() => {
+                  setIsTipsStepNineVisible(false);
+                }}
+              >
+                <span className="inline">
+                  <span>{'You can adjust '}</span>
+                  <span className="font-semibold text-lime-300">
+                    {'post-processing effects'}
                   </span>
-                </TipsPopover>
+                  <span>{' of your renderings here'}</span>
+                </span>
+              </TipsPopover>
             </div>
           </section>
         </div>
