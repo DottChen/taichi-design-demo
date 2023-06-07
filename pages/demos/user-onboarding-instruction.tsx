@@ -1,22 +1,22 @@
-import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
 
-import AimIcon from '@/assets/icons/aim.svg';
-import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
-import SidebarHelpIcon from '@/assets/icons/help.svg';
-import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
-import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
-import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import TipsDialog from '@/components/burrito-app/tips/TipsDialog';
-import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
-import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
-import Button from '@/components/local/Button';
-import Divider from '@/components/local/Divider';
-import Footer from '@/components/local/Footer';
-import { IconArrowBack } from '@tabler/icons-react';
+import AimIcon from "@/assets/icons/aim.svg";
+import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
+import SidebarHelpIcon from "@/assets/icons/help.svg";
+import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
+import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
+import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
+import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
+import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
+import Button from "@/components/local/Button";
+import Divider from "@/components/local/Divider";
+import Footer from "@/components/local/Footer";
+import { IconArrowBack } from "@tabler/icons-react";
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -49,6 +49,14 @@ const Demo: React.FC = () => {
   const [isTipsStepSevenVisible, setIsTipsStepSevenVisible] = useState(false);
   const [isTipsStepEightVisible, setIsTipsStepEightVisible] = useState(false);
   const [isTipsStepNineVisible, setIsTipsStepNineVisible] = useState(false);
+  
+  const shakeControls = useAnimationControls();
+  const startShake = () => {
+    shakeControls.start({
+      x: [0, 4, -4, 4, -4, 4, -4, 0],
+      transition: { duration: 0.3, ease: "easeOut" },
+    });
+  };
 
   return (
     <>
@@ -506,37 +514,48 @@ const Demo: React.FC = () => {
                   <span>{'at selected objects'}</span>
                 </span>
               </TipsPopover>
-              <div className="flex h-32 w-full">
+              <div className="flex-col gap-8 items-center justify-center flex h-48 w-full">
                 <AnimatePresence>
                   {isTipsStepFourVisible && (
-                    <TipsEmbed
-                      isStep
-                      currentStep={4}
-                      totalSteps={9}
-                      onBack={() => {
-                        setIsTipsStepThreeVisible(true);
-                        setIsTipsStepFourVisible(false);
-                      }}
-                      onNext={() => {
-                        setIsTipsStepFourVisible(false);
-                        setIsTipsStepFiveVisible(true);
-                      }}
-                      onClose={() => {
-                        setIsTipsStepFourVisible(false);
-                      }}
-                    >
-                      <span>
-                        <span>{'Drag a '}</span>
-                        <span className="font-semibold text-lime-300">
-                          {'material'}
-                        </span>
-                        <span>{' to an object to apply it'}</span>
-                      </span>
-                    </TipsEmbed>
+                    <>
+                      <Button
+                        isIcon={false}
+                        text="Click Other Sidebar Tab"
+                        onClick={() => {
+                          startShake();
+                        }}
+                      />
+                      <motion.div className="w-full" animate={shakeControls}>
+                        <TipsEmbed
+                          isStep
+                          currentStep={4}
+                          totalSteps={9}
+                          onBack={() => {
+                            setIsTipsStepThreeVisible(true);
+                            setIsTipsStepFourVisible(false);
+                          }}
+                          onNext={() => {
+                            setIsTipsStepFourVisible(false);
+                            setIsTipsStepFiveVisible(true);
+                          }}
+                          onClose={() => {
+                            setIsTipsStepFourVisible(false);
+                          }}
+                        >
+                          <span>
+                            <span>{'Drag a '}</span>
+                            <span className="font-semibold text-lime-300">
+                              {'material'}
+                            </span>
+                            <span>{' to an object to apply it'}</span>
+                          </span>
+                        </TipsEmbed>
+                      </motion.div>
+                    </>
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex h-32 w-full">
+              <div className="flex h-32 w-full items-center justify-center">
                 <AnimatePresence>
                   {isTipsStepFiveVisible && (
                     <TipsEmbed
@@ -566,7 +585,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex h-32 w-full">
+              <div className="flex h-32 w-full items-center justify-center">
                 <AnimatePresence>
                   {isTipsStepSixVisible && (
                     <TipsEmbed
@@ -598,7 +617,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex h-32 w-full">
+              <div className="flex h-32 w-full items-center justify-center">
                 <AnimatePresence>
                   {isTipsStepSevenVisible && (
                     <TipsEmbed
@@ -635,7 +654,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex h-32 w-full">
+              <div className="flex h-32 w-full items-center justify-center">
                 <AnimatePresence>
                   {isTipsStepEightVisible && (
                     <TipsEmbed

@@ -1,13 +1,13 @@
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import clsx from "clsx";
+import { motion } from "framer-motion";
 
-import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
-import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
-import GotItIcon from '@/assets/icons/got-it.svg';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import Button from '@/components/burrito-ui/Button';
+import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
+import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
+import GotItIcon from "@/assets/icons/got-it.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import Button from "@/components/burrito-ui/Button";
 
-import styles from './style.module.css';
+import styles from "./style.module.css";
 
 interface TipsEmbedProps {
   children: React.ReactNode;
