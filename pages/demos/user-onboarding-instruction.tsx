@@ -9,7 +9,7 @@ import SidebarHelpIcon from "@/assets/icons/help.svg";
 import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
 import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
 import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
-import TipsBanner from "@/components/burrito-app/tips/TipsBanner";
+import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
 import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
 import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
 import Button from "@/components/local/Button";
@@ -37,7 +37,7 @@ const Demo: React.FC = () => {
   const [isTipsPopoverFourVisible, setIsTipsPopoverFourVisible] =
     useState(false);
 
-  const [isTipsBannerOneVisible, setIsTipsBannerOneVisible] = useState(false);
+  const [isTipsDialogOneVisible, setIsTipsDialogOneVisible] = useState(false);
 
   return (
     <>
@@ -186,7 +186,7 @@ const Demo: React.FC = () => {
             <div className="flex w-[320px] flex-col gap-8">
               <div className="flex items-center justify-between">
                 <TipsPopover
-                  trigger={<DenoiserOnIcon />}
+                  anchor={<DenoiserOnIcon />}
                   isOpen={isTipsPopoverOneVisible}
                   onClose={() => {
                     setIsTipsPopoverOneVisible(false);
@@ -219,7 +219,7 @@ const Demo: React.FC = () => {
               <div className="flex items-center justify-between">
                 <TipsPopover
                   side="right"
-                  trigger={<SidebarHelpIcon />}
+                  anchor={<SidebarHelpIcon />}
                   isOpen={isTipsPopoverTwoVisible}
                   onClose={() => {
                     setIsTipsPopoverTwoVisible(false);
@@ -243,7 +243,7 @@ const Demo: React.FC = () => {
               </div>
               <div className="flex items-center justify-between">
                 <TipsPopover
-                  trigger={<AimIcon />}
+                  anchor={<AimIcon />}
                   isOpen={isTipsPopoverThreeVisible}
                   onClose={() => {
                     setIsTipsPopoverThreeVisible(false);
@@ -271,7 +271,7 @@ const Demo: React.FC = () => {
               </div>
               <div className="flex items-center justify-between">
                 <TipsPopover
-                  trigger={
+                  anchor={
                     <div className="text-sm font-semibold text-sky-300">
                       {'Post-processing'}
                     </div>
@@ -302,18 +302,20 @@ const Demo: React.FC = () => {
         </div>
         <div className="mt-24 flex flex-col gap-4">
           <div className="text-base font-semibold text-[var(--label-title)]">
-            {'TipsBanner（自动型）'}
+            {'TipsDialog（自动型）'}
           </div>
           <section className="flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900 py-16">
-            <TipsBanner
-              isOpen={isTipsBannerOneVisible}
+            <TipsDialog
+              isOpen={isTipsDialogOneVisible}
               onClose={() => {
-                setIsTipsBannerOneVisible(false);
+                setIsTipsDialogOneVisible(false);
               }}
             >
               <div className="flex items-center gap-10">
                 <div className="flex items-center justify-center gap-4">
-                  <LeftMouseButton />
+                  <div className="min-w-7">
+                    <LeftMouseButton />
+                  </div>
                   <div className="flex flex-col">
                     <div className="text-sm font-semibold text-lime-500">
                       {'Rotate'}
@@ -324,7 +326,9 @@ const Demo: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-4">
-                  <MouseWheelIcon />
+                  <div className="min-w-7">
+                    <MouseWheelIcon />
+                  </div>
                   <div className="flex flex-col">
                     <div className="text-sm font-semibold text-lime-500">
                       {'Zoom'}
@@ -335,7 +339,9 @@ const Demo: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-4">
-                  <RightMouseButton />
+                  <div className="min-w-7">
+                    <RightMouseButton />
+                  </div>
                   <div className="flex flex-col">
                     <div className="text-sm font-semibold text-lime-500">
                       {'Pan'}
@@ -346,12 +352,12 @@ const Demo: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </TipsBanner>
+            </TipsDialog>
             <Button
               isIcon={false}
               text="Open Tips"
               onClick={() => {
-                setIsTipsBannerOneVisible(true);
+                setIsTipsDialogOneVisible(true);
               }}
             />
           </section>

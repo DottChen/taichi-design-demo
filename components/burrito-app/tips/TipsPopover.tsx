@@ -1,15 +1,15 @@
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
-import GotItIcon from '@/assets/icons/got-it.svg';
-import Button from '@/components/burrito-ui/Button';
-import * as Popover from '@radix-ui/react-popover';
+import GotItIcon from "@/assets/icons/got-it.svg";
+import Button from "@/components/burrito-ui/Button";
+import * as Popover from "@radix-ui/react-popover";
 
-import styles from './style.module.css';
+import styles from "./style.module.css";
 
 interface TipsPopoverProps {
   children: React.ReactNode;
-  trigger: React.ReactNode;
+  anchor: React.ReactNode;
   closeText?: string;
   closeIcon?: React.ReactNode;
   sticky?: 'always' | 'partial';
@@ -21,7 +21,7 @@ interface TipsPopoverProps {
 
 export const TipsPopover: React.FC<TipsPopoverProps> = ({
   children,
-  trigger,
+  anchor,
   closeText,
   closeIcon,
   side = 'top',
@@ -33,7 +33,7 @@ export const TipsPopover: React.FC<TipsPopoverProps> = ({
   return (
     <Popover.Root>
       <Popover.Trigger className="focus:outline-none">
-        {trigger}
+        {anchor}
       </Popover.Trigger>
       <AnimatePresence>
         {isOpen && (
