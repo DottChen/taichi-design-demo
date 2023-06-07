@@ -9,6 +9,7 @@ import SidebarHelpIcon from "@/assets/icons/help.svg";
 import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
 import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
 import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
 import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
 import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
 import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
@@ -38,6 +39,16 @@ const Demo: React.FC = () => {
     useState(false);
 
   const [isTipsDialogOneVisible, setIsTipsDialogOneVisible] = useState(false);
+
+  const [isTipsStepOneVisible, setIsTipsStepOneVisible] = useState(false);
+  const [isTipsStepTwoVisible, setIsTipsStepTwoVisible] = useState(false);
+  const [isTipsStepThreeVisible, setIsTipsStepThreeVisible] = useState(false);
+  const [isTipsStepFourVisible, setIsTipsStepFourVisible] = useState(false);
+  const [isTipsStepFiveVisible, setIsTipsStepFiveVisible] = useState(false);
+  const [isTipsStepSixVisible, setIsTipsStepSixVisible] = useState(false);
+  const [isTipsStepSevenVisible, setIsTipsStepSevenVisible] = useState(false);
+  const [isTipsStepEightVisible, setIsTipsStepEightVisible] = useState(false);
+  const [isTipsStepNineVisible, setIsTipsStepNineVisible] = useState(false);
 
   return (
     <>
@@ -360,6 +371,322 @@ const Demo: React.FC = () => {
                 setIsTipsDialogOneVisible(true);
               }}
             />
+          </section>
+        </div>
+        <div className="mt-24 flex flex-col gap-4">
+          <div className="text-base font-semibold text-[var(--label-title)]">
+            {'用户引导步骤'}
+          </div>
+          <section className="flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
+            <div className="flex w-[320px] border-x border-dashed border-red-500 py-16 items-center justify-center flex-col gap-32">
+              <Button
+                isIcon={false}
+                text="Start Journey"
+                onClick={() => {
+                  setIsTipsStepOneVisible(true);
+                }}
+              />
+              <TipsDialog
+                isStep
+                currentStep={1}
+                totalSteps={9}
+                onBack={() => {}}
+                onNext={() => {
+                  setIsTipsStepOneVisible(false);
+                  setIsTipsStepTwoVisible(true);
+                }}
+                isOpen={isTipsStepOneVisible}
+                onClose={() => {
+                  setIsTipsStepOneVisible(false);
+                }}
+              >
+                <div className="flex items-center gap-10">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="min-w-7">
+                      <LeftMouseButton />
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-sm font-semibold text-lime-500">
+                        {'Rotate'}
+                      </div>
+                      <div className="text-xs font-normal text-white">
+                        {'Drag with left mouse button'}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="min-w-7">
+                      <MouseWheelIcon />
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-sm font-semibold text-lime-500">
+                        {'Zoom'}
+                      </div>
+                      <div className="text-xs font-normal text-white">
+                        {'Scroll up or down with mouse wheel'}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="min-w-7">
+                      <RightMouseButton />
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-sm font-semibold text-lime-500">
+                        {'Pan'}
+                      </div>
+                      <div className="text-xs font-normal text-white">
+                        {'Drag with middle or right mouse button'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </TipsDialog>
+              <TipsPopover
+                anchor={<DenoiserOnIcon />}
+                isStep
+                currentStep={2}
+                totalSteps={9}
+                onBack={() => {
+                  setIsTipsStepOneVisible(true);
+                  setIsTipsStepTwoVisible(false);
+                }}
+                onNext={() => {
+                  setIsTipsStepTwoVisible(false);
+                  setIsTipsStepThreeVisible(true);
+                }}
+                isOpen={isTipsStepTwoVisible}
+                onClose={() => {
+                  setIsTipsStepTwoVisible(false);
+                }}
+              >
+                <div className="flex flex-col items-start justify-center gap-2">
+                  <span className="inline">
+                    <span className="font-semibold text-lime-300">
+                      {'Denoiser'}
+                    </span>
+                    <span>{' has been automaticlaly turned on'}</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <span>{'Press'}</span>
+                    <span className="inline-flex h-5 items-center">
+                      <DenoiserOnIcon />
+                    </span>
+                    <span>{'to turn it off'}</span>
+                  </span>
+                </div>
+              </TipsPopover>
+              <TipsPopover
+                anchor={<AimIcon />}
+                isStep
+                currentStep={3}
+                totalSteps={9}
+                onBack={() => {
+                  setIsTipsStepTwoVisible(true);
+                  setIsTipsStepThreeVisible(false);
+                }}
+                onNext={() => {
+                  setIsTipsStepThreeVisible(false);
+                  setIsTipsStepFourVisible(true);
+                }}
+                isOpen={isTipsStepThreeVisible}
+                onClose={() => {
+                  setIsTipsStepThreeVisible(false);
+                }}
+              >
+                <span className="inline-flex items-center gap-1">
+                  <span>{'Press'}</span>
+                  <span className="inline-flex h-5 items-center">
+                    <AimIcon />
+                  </span>
+                  <span>{'to'}</span>
+                  <span className="font-semibold text-lime-300">
+                    {'Aim View'}
+                  </span>
+                  <span>{'at selected objects'}</span>
+                </span>
+              </TipsPopover>
+              <AnimatePresence>
+                {isTipsStepFourVisible && (
+                  <TipsEmbed
+                    isStep
+                    currentStep={4}
+                    totalSteps={9}
+                    onBack={() => {
+                      setIsTipsStepThreeVisible(true);
+                      setIsTipsStepFourVisible(false);
+                    }}
+                    onNext={() => {
+                      setIsTipsStepFourVisible(false);
+                      setIsTipsStepFiveVisible(true);
+                    }}
+                    onClose={() => {
+                      setIsTipsStepFourVisible(false);
+                    }}
+                  >
+                    <span>
+                      <span>{'Drag a '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'material'}
+                      </span>
+                      <span>{' to an object to apply it'}</span>
+                    </span>
+                  </TipsEmbed>
+                )}
+              </AnimatePresence>
+              <AnimatePresence>
+                {isTipsStepFiveVisible && (
+                  <TipsEmbed
+                    isStep
+                    currentStep={5}
+                    totalSteps={9}
+                    onBack={() => {
+                      setIsTipsStepFourVisible(true);
+                      setIsTipsStepFiveVisible(false);
+                    }}
+                    onNext={() => {
+                      setIsTipsStepFiveVisible(false);
+                      setIsTipsStepSixVisible(true);
+                    }}
+                    onClose={() => {
+                      setIsTipsStepFiveVisible(false);
+                    }}
+                  >
+                    <span>
+                      <span>{'Click an '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'environment'}
+                      </span>
+                      <span>{' or drag into the viewport to apply it'}</span>
+                    </span>
+                  </TipsEmbed>
+                )}
+              </AnimatePresence>
+              <AnimatePresence>
+                {isTipsStepSixVisible && (
+                  <TipsEmbed
+                    isStep
+                    currentStep={6}
+                    totalSteps={9}
+                    onBack={() => {
+                      setIsTipsStepFiveVisible(true);
+                      setIsTipsStepSixVisible(false);
+                    }}
+                    onNext={() => {
+                      setIsTipsStepSixVisible(false);
+                      setIsTipsStepSevenVisible(true);
+                    }}
+                    onClose={() => {
+                      setIsTipsStepSixVisible(false);
+                    }}
+                  >
+                    <span>
+                      <span>{'Click a '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'model'}
+                      </span>
+                      <span>
+                        {' or drag into the viewport to add it to the scene'}
+                      </span>
+                    </span>
+                  </TipsEmbed>
+                )}
+              </AnimatePresence>
+              <AnimatePresence>
+                {isTipsStepSevenVisible && (
+                  <TipsEmbed
+                    isStep
+                    currentStep={7}
+                    totalSteps={9}
+                    onBack={() => {
+                      setIsTipsStepSixVisible(true);
+                      setIsTipsStepSevenVisible(false);
+                    }}
+                    onNext={() => {
+                      setIsTipsStepSevenVisible(false);
+                      setIsTipsStepEightVisible(true);
+                    }}
+                    onClose={() => {
+                      setIsTipsStepSevenVisible(false);
+                    }}
+                  >
+                    <span>
+                      <span>{'Click to add an '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'animation'}
+                      </span>
+                      <span>{' to selected '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'objects'}
+                      </span>
+                      <span>{' or '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'current camera'}
+                      </span>
+                    </span>
+                  </TipsEmbed>
+                )}
+              </AnimatePresence>
+              <AnimatePresence>
+                {isTipsStepEightVisible && (
+                  <TipsEmbed
+                    isStep
+                    currentStep={8}
+                    totalSteps={9}
+                    onBack={() => {
+                      setIsTipsStepSevenVisible(true);
+                      setIsTipsStepEightVisible(false);
+                    }}
+                    onNext={() => {
+                      setIsTipsStepEightVisible(false);
+                      setIsTipsStepNineVisible(true);
+                    }}
+                    onClose={() => {
+                      setIsTipsStepEightVisible(false);
+                    }}
+                  >
+                    <span>
+                      <span>{'Click to preview a '}</span>
+                      <span className="font-semibold text-lime-300">
+                        {'lighting preset'}
+                      </span>
+                    </span>
+                  </TipsEmbed>
+                )}
+              </AnimatePresence>
+              <TipsPopover
+                  anchor={
+                    <div className="text-sm font-semibold text-sky-300">
+                      {'Post-processing'}
+                    </div>
+                  }
+                  isStep
+                  side="bottom"
+                  closeIcon={
+                    <SparkleIcon />
+                  }
+                  closeText="Well Done!"
+                  currentStep={9}
+                  totalSteps={9}
+                  onBack={() => {
+                    setIsTipsStepEightVisible(true);
+                    setIsTipsStepNineVisible(false);
+                  }}
+                  onNext={() => {}}
+                  isOpen={isTipsStepNineVisible}
+                  onClose={() => {
+                    setIsTipsStepNineVisible(false);
+                  }}
+                >
+                  <span className="inline">
+                    <span>{'You can adjust '}</span>
+                    <span className="font-semibold text-lime-300">
+                      {'post-processing effects'}
+                    </span>
+                    <span>{' of your renderings here'}</span>
+                  </span>
+                </TipsPopover>
+            </div>
           </section>
         </div>
         <Footer />
