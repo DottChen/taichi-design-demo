@@ -1,14 +1,15 @@
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
-import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
-import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
-import GotItIcon from '@/assets/icons/got-it.svg';
-import SparkleIcon from '@/assets/icons/sparkle.svg';
-import Button from '@/components/burrito-ui/Button';
-import * as Popover from '@radix-ui/react-popover';
+import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
+import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
+import GotItIcon from "@/assets/icons/got-it.svg";
+import SparkleIcon from "@/assets/icons/sparkle.svg";
+import Button from "@/components/burrito-ui/Button";
+import * as Popover from "@radix-ui/react-popover";
 
-import styles from './style.module.css';
+import Arrow from "./Arrow";
+import styles from "./style.module.css";
 
 interface TipsPopoverProps {
   children: React.ReactNode;
@@ -151,7 +152,9 @@ export const TipsPopover: React.FC<TipsPopoverProps> = ({
                     {closeText || 'Got it'}
                   </Button>
                 )}
-                <Popover.Arrow className="fill-black" width={16} height={8} />
+                <Popover.Arrow asChild width={16} height={9}>
+                  <Arrow side={side} />
+                </Popover.Arrow>
               </motion.div>
             </Popover.Content>
           </Popover.Portal>
