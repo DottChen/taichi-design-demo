@@ -1,0 +1,10 @@
+.TooltipContent {
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #fff;
+  user-select: none;
+  will-change: transform, opacity;
+  border: 1px solid #3F3F46;
+  max-width: 300px;
+  @apply bg-zinc-800 text-sm font-semibold leading-5 drop-shadow-lg z-hint;
+}

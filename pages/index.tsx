@@ -1,7 +1,7 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import DemoItem from '@/components/local/DemoItem';
-import Divider from '@/components/local/Divider';
+import DemoItem from "@/components/local/DemoItem";
+import Divider from "@/components/local/Divider";
 
 export default function Home() {
   const description = `
@@ -44,6 +44,11 @@ export default function Home() {
             title="User Onboarding Instruction"
             link="user-onboarding-instruction"
             date="2023/06/06"
+          />
+          <DemoItem
+            title="Sidebar Tooltip Animation"
+            link="sidebar-tooltip-animation"
+            date="2023/06/07"
           />
         </div>
       </main>
