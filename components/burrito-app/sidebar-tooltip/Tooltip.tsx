@@ -51,7 +51,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
                   initial={{ opacity: 0, translateX: 8 }}
                   animate={{ opacity: 1, translateX: 0 }}
                   exit={{ opacity: 0, translateX: 8 }}
-                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
                 >
                   {content}
                   <RadixTooltip.Arrow asChild width={16} height={9}>
