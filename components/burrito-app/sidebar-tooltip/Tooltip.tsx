@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import * as RadixTooltip from "@radix-ui/react-tooltip";
 
-import Arrow from './Arrow';
-import styles from './style.module.css';
+import Arrow from "./Arrow";
+import styles from "./style.module.css";
 
 interface TooltipProps {
   children: React.ReactNode;
