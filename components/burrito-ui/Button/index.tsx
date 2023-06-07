@@ -1,5 +1,5 @@
-import clsx from 'clsx';
-import { forwardRef } from 'react';
+import clsx from "clsx";
+import { forwardRef } from "react";
 
 export type ButtonType =
   | 'primary'
@@ -97,8 +97,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {iconSuffix && (
           <div className="z-10 ml-1 flex items-center">{iconSuffix}</div>
         )}
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-hover:from-lime-400 group-hover:to-sky-400 group-hover:opacity-100 group-disabled:bg-zinc-900" />
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-active:from-lime-500 group-active:to-sky-500 group-active:opacity-100 group-disabled:bg-zinc-900" />
+        {type === 'tips' && (
+          <>
+            <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-hover:from-lime-400 group-hover:to-sky-400 group-hover:opacity-100 group-disabled:bg-zinc-900" />
+            <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-active:from-lime-500 group-active:to-sky-500 group-active:opacity-100 group-disabled:bg-zinc-900" />
+          </>
+        )}
       </button>
     );
   }
