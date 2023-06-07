@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
-import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
-import GotItIcon from "@/assets/icons/got-it.svg";
-import Button from "@/components/burrito-ui/Button";
-import * as Dialog from "@radix-ui/react-dialog";
+import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
+import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
+import GotItIcon from '@/assets/icons/got-it.svg';
+import Button from '@/components/burrito-ui/Button';
+import * as Dialog from '@radix-ui/react-dialog';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
 interface TipsDialogProps {
   children: React.ReactNode;
@@ -76,7 +76,7 @@ export const TipsDialog: React.FC<TipsDialogProps> = ({
                   {children}
                 </div>
                 {isStep ? (
-                  <div className="flex items-center gap-3 justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <Button
                       type="link"
                       className=""
@@ -92,14 +92,14 @@ export const TipsDialog: React.FC<TipsDialogProps> = ({
                       <div className="flex items-center justify-end gap-2">
                         <button
                           disabled={currentStep === 1}
-                          className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
+                          className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:opacity-40"
                           onClick={onBack}
                         >
                           <ChevronLeftIcon />
                         </button>
                         <button
                           disabled={currentStep === totalSteps}
-                          className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black disabled:opacity-40"
+                          className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:opacity-40"
                           onClick={onNext}
                         >
                           <ChevronRightIcon />

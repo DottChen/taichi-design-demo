@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import IconMenu from "@/assets/icons/menu-icon-32x32.svg";
-import taitopiaLogo from "@/assets/images/taitopia-logo.png";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import IconMenu from '@/assets/icons/menu-icon-32x32.svg';
+import taitopiaLogo from '@/assets/images/taitopia-logo.png';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -41,7 +41,7 @@ const Demo: React.FC = () => {
         <Divider />
         <section className="mt-24 flex h-64 w-full items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
           {/* Edit here to change content*/}
-          <div className="relative group flex h-12 w-12 cursor-pointer items-center justify-center">
+          <div className="group relative flex h-12 w-12 cursor-pointer items-center justify-center">
             <Image
               src={taitopiaLogo}
               width={48}

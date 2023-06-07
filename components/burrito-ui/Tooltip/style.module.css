@@ -6,9 +6,9 @@
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-  border: 1px solid #3F3F46;
+  border: 1px solid #3f3f46;
   max-width: 300px;
-  @apply bg-zinc-800 text-sm font-semibold leading-5 drop-shadow-lg z-hint;
+  @apply z-hint bg-zinc-800 text-sm font-semibold leading-5 drop-shadow-lg;
 }
 .TooltipContent[data-state='delayed-open'][data-side='top'] {
   animation-name: slideDownAndFade;

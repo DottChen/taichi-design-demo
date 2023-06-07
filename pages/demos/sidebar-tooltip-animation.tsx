@@ -1,19 +1,19 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import animationImg from "@/assets/images/animation.png";
-import environmentImg from "@/assets/images/environment.png";
-import importImg from "@/assets/images/import.png";
-import lightPresetImg from "@/assets/images/light-preset.png";
-import materialImg from "@/assets/images/material.png";
-import modelImg from "@/assets/images/model.png";
-import Tooltip from "@/components/burrito-app/sidebar-tooltip/Tooltip";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import animationImg from '@/assets/images/animation.png';
+import environmentImg from '@/assets/images/environment.png';
+import importImg from '@/assets/images/import.png';
+import lightPresetImg from '@/assets/images/light-preset.png';
+import materialImg from '@/assets/images/material.png';
+import modelImg from '@/assets/images/model.png';
+import Tooltip from '@/components/burrito-app/sidebar-tooltip/Tooltip';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -33,24 +33,19 @@ const Demo: React.FC = () => {
     setIsOpenMaterial(true);
     setTimeout(() => {
       setIsOpenEnvironment(true);
-    }
-    , 150);
+    }, 150);
     setTimeout(() => {
       setIsOpenModel(true);
-    }
-    , 300);
+    }, 300);
     setTimeout(() => {
       setIsOpenAnimation(true);
-    }
-    , 450);
+    }, 450);
     setTimeout(() => {
       setIsOpenLightPreset(true);
-    }
-    , 600);
+    }, 600);
     setTimeout(() => {
       setIsOpenImport(true);
-    }
-    , 750);
+    }, 750);
 
     setTimeout(() => {
       setIsOpenMaterial(false);
@@ -59,10 +54,8 @@ const Demo: React.FC = () => {
       setIsOpenAnimation(false);
       setIsOpenLightPreset(false);
       setIsOpenImport(false);
-    }
-    , 3350);
-  }
-
+    }, 3350);
+  };
 
   return (
     <>
@@ -88,27 +81,23 @@ const Demo: React.FC = () => {
           {metaData.title}
         </h1>
         <Divider />
-        <section className="mt-24 flex py-16 w-full items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900">
+        <section className="mt-24 flex w-full items-center justify-center overflow-hidden rounded-2xl border border-[var(--bg-border)] bg-zinc-900 py-16">
           {/* Edit here to change content*/}
-          <div className="relative group flex gap-5 flex-col items-center justify-center">
+          <div className="group relative flex flex-col items-center justify-center gap-5">
             <Button
               isIcon={false}
               text="Start Animation"
               className="mb-16"
               onClick={handleStartAnimation}
             />
-            <Tooltip
-              side="right"
-              content="Material"
-              isOpen={isOpenMaterial}
-            >
+            <Tooltip side="right" content="Material" isOpen={isOpenMaterial}>
               <Image
                 src={materialImg}
                 width={32}
                 height={32}
                 alt="Material"
                 quality={100}
-                />
+              />
             </Tooltip>
             <Tooltip
               side="right"
@@ -121,33 +110,25 @@ const Demo: React.FC = () => {
                 height={32}
                 alt="Environment"
                 quality={100}
-                />
+              />
             </Tooltip>
-            <Tooltip
-              side="right"
-              content="Model"
-              isOpen={isOpenModel}
-            >
+            <Tooltip side="right" content="Model" isOpen={isOpenModel}>
               <Image
                 src={modelImg}
                 width={32}
                 height={32}
                 alt="Model"
                 quality={100}
-                />
+              />
             </Tooltip>
-            <Tooltip
-              side="right"
-              content="Animation"
-              isOpen={isOpenAnimation}
-            >
+            <Tooltip side="right" content="Animation" isOpen={isOpenAnimation}>
               <Image
                 src={animationImg}
                 width={32}
                 height={32}
                 alt="Animation"
                 quality={100}
-                />
+              />
             </Tooltip>
             <Tooltip
               side="right"
@@ -160,13 +141,9 @@ const Demo: React.FC = () => {
                 height={32}
                 alt="Light Preset"
                 quality={100}
-                />
+              />
             </Tooltip>
-            <Tooltip
-              side="right"
-              content="Import"
-              isOpen={isOpenImport}
-            >
+            <Tooltip side="right" content="Import" isOpen={isOpenImport}>
               <Image
                 src={importImg}
                 width={32}

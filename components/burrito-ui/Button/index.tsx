@@ -59,7 +59,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick && ((event) => onClick(event))}
         type={htmlType}
         className={clsx(
-          'inline-flex select-none items-center justify-center whitespace-nowrap rounded-lg font-semibold outline-none duration-75 focus-visible:outline-none',
+          'group relative inline-flex select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-lg font-semibold outline-none transition-all duration-75 focus-visible:outline-none',
           dimensionsClassNames,
           {
             'w-full':
@@ -76,7 +76,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               type === 'secondary' && !disabled,
             'border-none bg-red-500 text-white shadow-lg hover:bg-red-600 active:bg-red-700':
               type === 'warning' && !disabled,
-            'bg-gradient-to-r from-lime-300 to-sky-500 text-black':
+            'bg-gradient-to-r from-lime-300 to-sky-300 text-black disabled:bg-zinc-900':
               type === 'tips' && !disabled,
             'border-none bg-transparent text-sky-500 hover:bg-neutral-900 active:bg-black':
               type === 'link' && !disabled,
@@ -92,11 +92,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         data-type={type}
       >
-        {icon && <div className="mr-2 flex items-center">{icon}</div>}
-        {children}
+        {icon && <div className="z-10 mr-2 flex items-center">{icon}</div>}
+        <span className="z-10">{children}</span>
         {iconSuffix && (
-          <div className="ml-1 flex items-center">{iconSuffix}</div>
+          <div className="z-10 ml-1 flex items-center">{iconSuffix}</div>
         )}
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-hover:from-lime-400 group-hover:to-sky-400 group-hover:opacity-100 group-disabled:bg-zinc-900" />
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r opacity-0 transition-all duration-150 group-active:from-lime-500 group-active:to-sky-500 group-active:opacity-100 group-disabled:bg-zinc-900" />
       </button>
     );
   }

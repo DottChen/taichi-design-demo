@@ -1,22 +1,22 @@
-import { AnimatePresence } from "framer-motion";
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
+import { AnimatePresence } from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import AimIcon from "@/assets/icons/aim.svg";
-import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
-import SidebarHelpIcon from "@/assets/icons/help.svg";
-import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
-import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
-import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
-import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
-import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import AimIcon from '@/assets/icons/aim.svg';
+import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
+import SidebarHelpIcon from '@/assets/icons/help.svg';
+import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
+import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
+import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import TipsDialog from '@/components/burrito-app/tips/TipsDialog';
+import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
+import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -506,7 +506,7 @@ const Demo: React.FC = () => {
                   <span>{'at selected objects'}</span>
                 </span>
               </TipsPopover>
-              <div className="flex w-full h-32">
+              <div className="flex h-32 w-full">
                 <AnimatePresence>
                   {isTipsStepFourVisible && (
                     <TipsEmbed
@@ -536,7 +536,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex w-full h-32">
+              <div className="flex h-32 w-full">
                 <AnimatePresence>
                   {isTipsStepFiveVisible && (
                     <TipsEmbed
@@ -566,7 +566,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex w-full h-32">
+              <div className="flex h-32 w-full">
                 <AnimatePresence>
                   {isTipsStepSixVisible && (
                     <TipsEmbed
@@ -598,7 +598,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex w-full h-32">
+              <div className="flex h-32 w-full">
                 <AnimatePresence>
                   {isTipsStepSevenVisible && (
                     <TipsEmbed
@@ -635,7 +635,7 @@ const Demo: React.FC = () => {
                   )}
                 </AnimatePresence>
               </div>
-              <div className="flex w-full h-32">
+              <div className="flex h-32 w-full">
                 <AnimatePresence>
                   {isTipsStepEightVisible && (
                     <TipsEmbed
