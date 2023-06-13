@@ -21,41 +21,89 @@ const Demo: React.FC = () => {
     title: 'Sidebar Tooltip Animation',
     date: '2023/06/07',
   };
-
-  const [isOpenMaterial, setIsOpenMaterial] = useState(false);
-  const [isOpenEnvironment, setIsOpenEnvironment] = useState(false);
-  const [isOpenModel, setIsOpenModel] = useState(false);
-  const [isOpenAnimation, setIsOpenAnimation] = useState(false);
-  const [isOpenLightPreset, setIsOpenLightPreset] = useState(false);
-  const [isOpenImport, setIsOpenImport] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
   const handleStartAnimation = () => {
-    setIsOpenMaterial(true);
+    setIsOpen(true);
     setTimeout(() => {
-      setIsOpenEnvironment(true);
-    }, 100);
-    setTimeout(() => {
-      setIsOpenModel(true);
-    }, 200);
-    setTimeout(() => {
-      setIsOpenAnimation(true);
-    }, 300);
-    setTimeout(() => {
-      setIsOpenLightPreset(true);
-    }, 400);
-    setTimeout(() => {
-      setIsOpenImport(true);
-    }, 500);
-
-    setTimeout(() => {
-      setIsOpenMaterial(false);
-      setIsOpenEnvironment(false);
-      setIsOpenModel(false);
-      setIsOpenAnimation(false);
-      setIsOpenLightPreset(false);
-      setIsOpenImport(false);
+      setIsOpen(false);
     }, 3100);
   };
+
+  const tooltipList = [
+    {
+      content: 'Material',
+      icon: (
+        <Image
+          src={materialImg}
+          width={32}
+          height={32}
+          alt="Material"
+          quality={100}
+        />
+      ),
+    },
+    {
+      content: 'Environment',
+      icon: (
+        <Image
+          src={environmentImg}
+          width={32}
+          height={32}
+          alt="Environment"
+          quality={100}
+        />
+      ),
+    },
+    {
+      content: 'Model',
+      icon: (
+        <Image
+          src={modelImg}
+          width={32}
+          height={32}
+          alt="Model"
+          quality={100}
+        />
+      ),
+    },
+    {
+      content: 'Animation',
+      icon: (
+        <Image
+          src={animationImg}
+          width={32}
+          height={32}
+          alt="Animation"
+          quality={100}
+        />
+      ),
+    },
+    {
+      content: 'Light Preset',
+      icon: (
+        <Image
+          src={lightPresetImg}
+          width={32}
+          height={32}
+          alt="Light Preset"
+          quality={100}
+        />
+      ),
+    },
+    {
+      content: 'Import',
+      icon: (
+        <Image
+          src={importImg}
+          width={32}
+          height={32}
+          alt="Import"
+          className="mt-7"
+          quality={100}
+        />
+      ),
+    },
+  ];
 
   return (
     <>
@@ -65,7 +113,7 @@ const Demo: React.FC = () => {
       <div className="flex flex-col">
         <div className="flex flex-col lg:-ml-44 lg:flex-row lg:gap-20">
           <Link
-            className="group mb-10 -mt-16 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
+            className="group -mt-16 mb-10 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
             href={'/'}
           >
             <IconArrowBack className="h-4 w-4" />
@@ -90,69 +138,19 @@ const Demo: React.FC = () => {
               className="mb-16"
               onClick={handleStartAnimation}
             />
-            <Tooltip side="right" content="Material" isOpen={isOpenMaterial}>
-              <Image
-                src={materialImg}
-                width={32}
-                height={32}
-                alt="Material"
-                quality={100}
-              />
-            </Tooltip>
-            <Tooltip
-              side="right"
-              content="Environment"
-              isOpen={isOpenEnvironment}
-            >
-              <Image
-                src={environmentImg}
-                width={32}
-                height={32}
-                alt="Environment"
-                quality={100}
-              />
-            </Tooltip>
-            <Tooltip side="right" content="Model" isOpen={isOpenModel}>
-              <Image
-                src={modelImg}
-                width={32}
-                height={32}
-                alt="Model"
-                quality={100}
-              />
-            </Tooltip>
-            <Tooltip side="right" content="Animation" isOpen={isOpenAnimation}>
-              <Image
-                src={animationImg}
-                width={32}
-                height={32}
-                alt="Animation"
-                quality={100}
-              />
-            </Tooltip>
-            <Tooltip
-              side="right"
-              content="Light Preset"
-              isOpen={isOpenLightPreset}
-            >
-              <Image
-                src={lightPresetImg}
-                width={32}
-                height={32}
-                alt="Light Preset"
-                quality={100}
-              />
-            </Tooltip>
-            <Tooltip side="right" content="Import" isOpen={isOpenImport}>
-              <Image
-                src={importImg}
-                width={32}
-                height={32}
-                alt="Import"
-                className="mt-7"
-                quality={100}
-              />
-            </Tooltip>
+            {tooltipList.map((tooltip, index) => {
+              return (
+                <Tooltip
+                  side="right"
+                  key={`tooltip-${tooltip.content}`}
+                  isOpen={isOpen}
+                  delay={index * 0.1}
+                  content={tooltip.content}
+                >
+                  {tooltip.icon}
+                </Tooltip>
+              );
+            })}
           </div>
         </section>
         <Footer />

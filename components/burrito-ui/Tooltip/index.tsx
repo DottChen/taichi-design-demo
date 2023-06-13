@@ -1,11 +1,11 @@
-import clsx from 'clsx';
-import { noop } from 'lodash';
-import { useEffect, useRef, useState } from 'react';
+import clsx from "clsx";
+import { noop } from "lodash";
+import { useEffect, useRef, useState } from "react";
 
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import * as RadixTooltip from "@radix-ui/react-tooltip";
 
-import Arrow from './Arrow';
-import styles from './style.module.css';
+import Arrow from "./Arrow";
+import styles from "./style.module.css";
 
 type TooltipProps = {
   children: React.ReactNode;

@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import * as RadixTooltip from "@radix-ui/react-tooltip";
+import * as RadixTooltip from '@radix-ui/react-tooltip';
 
-import Arrow from "./Arrow";
-import styles from "./style.module.css";
+import Arrow from './Arrow';
+import styles from './style.module.css';
 
 interface TooltipProps {
   children: React.ReactNode;
@@ -15,6 +15,7 @@ interface TooltipProps {
   delayDuration?: number;
   offset?: number;
   isOpen: boolean;
+  delay?: number;
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({
@@ -26,6 +27,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   delayDuration = 700,
   offset = 8,
   isOpen,
+  delay = 0,
 }: TooltipProps) => {
   return (
     <RadixTooltip.Provider delayDuration={delayDuration}>
@@ -50,8 +52,8 @@ export const Tooltip: React.FC<TooltipProps> = ({
                   className={clsx(styles.TooltipContent, className)}
                   initial={{ opacity: 0, translateX: 8 }}
                   animate={{ opacity: 1, translateX: 0 }}
-                  exit={{ opacity: 0, translateX: 8 }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                  exit={{ opacity: 0, translateX: 8, transition: { delay: 0 } }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: delay }}
                 >
                   {content}
                   <RadixTooltip.Arrow asChild width={16} height={9}>
