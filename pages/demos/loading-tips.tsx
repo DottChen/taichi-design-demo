@@ -102,7 +102,7 @@ const Demo: React.FC = () => {
       return;
     }
     const timer = setTimeout(() => {
-      setCurrentTip((currentTip + 1) % tips.length);
+      nextTip();
     }, 3800);
 
     return () => clearTimeout(timer);
