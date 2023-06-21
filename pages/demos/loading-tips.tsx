@@ -81,7 +81,9 @@ const Demo: React.FC = () => {
   const [isShowTips, setShowTips] = useState(false);
   const [currentTip, setCurrentTip] = useState(0);
   const [animateDirection, setAnimateDirection] = useState<'left' | 'right'>('right');
+
   const previousTip = () => {
+    // MARK: if the animation is already in the same direction, just change the tip, otherwise, set the animation direction and the animation will take effect afterwords
     if (animateDirection === 'left') {
       setCurrentTip((currentTip + 1) % tips.length);
       return;
@@ -89,6 +91,7 @@ const Demo: React.FC = () => {
     setAnimateDirection('left');
   };
   const nextTip = () => {
+    // MARK: if the animation is already in the same direction, just change the tip, otherwise, set the animation direction and the animation will take effect afterwords
     if (animateDirection === 'right') {
       setCurrentTip((currentTip + 1) % tips.length);
       return;
@@ -96,7 +99,16 @@ const Demo: React.FC = () => {
     setAnimateDirection('right');
   };
 
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      previousTip();
+    } else if (event.key === 'ArrowRight') {
+      nextTip();
+    }
+  };
+
   useEffect(() => {
+    // MARK: Auto change tips
     if (!isShowTips) {
       setCurrentTip(0);
       return;
@@ -109,12 +121,21 @@ const Demo: React.FC = () => {
   }, [currentTip, isShowTips]);
 
   useEffect(() => {
+    // MARK: set new animate direction state before animation takes effect
     if (animateDirection === 'left') {
       setCurrentTip((currentTip - 1 + tips.length) % tips.length);
     } else {
       setCurrentTip((currentTip + 1) % tips.length);
     }
   }, [animateDirection]);
+
+  useEffect(() => {
+    // MARK: add keydown event listener
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <>
@@ -212,6 +233,7 @@ const Demo: React.FC = () => {
                   </BurritoButton.default>
                 </div>
                 {/* Loading tips here! */}
+                
               </motion.div>
             )}
           </AnimatePresence>
