@@ -103,7 +103,7 @@ const Demo: React.FC = () => {
     }
     const timer = setTimeout(() => {
       nextTip();
-    }, 3800);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [currentTip, isShowTips]);
@@ -190,9 +190,9 @@ const Demo: React.FC = () => {
                               className="absolute"
                               key={`tip-${tip.id}`}
                               initial={{ opacity: 0, translateX: animateDirection === "right" ? 32 : -32 }}
-                              animate={{ opacity: 1, translateX: 0, transition: { duration: 0.4, ease: 'easeOut', delay: 0.4 } }}
+                              animate={{ opacity: 1, translateX: 0, transition: { duration: 0.5, ease: 'easeOut', delay: 0.5 } }}
                               exit={{ opacity: 0, translateX: animateDirection === "right" ? -32 : 32 }}
-                              transition={{ duration: 0.4, ease: 'easeOut' }}
+                              transition={{ duration: 0.5, ease: 'easeOut' }}
                             >
                               {tip.content}
                             </motion.div>
