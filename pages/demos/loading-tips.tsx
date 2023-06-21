@@ -80,14 +80,20 @@ const Demo: React.FC = () => {
   ]
   const [isShowTips, setShowTips] = useState(false);
   const [currentTip, setCurrentTip] = useState(0);
-  const [animateDirection, setAnimateDirection] = useState<'left' | 'right'>('left');
+  const [animateDirection, setAnimateDirection] = useState<'left' | 'right'>('right');
   const previousTip = () => {
+    if (animateDirection === 'left') {
+      setCurrentTip((currentTip + 1) % tips.length);
+      return;
+    }
     setAnimateDirection('left');
-    setCurrentTip((currentTip - 1 + tips.length) % tips.length);
   };
   const nextTip = () => {
+    if (animateDirection === 'right') {
+      setCurrentTip((currentTip + 1) % tips.length);
+      return;
+    }
     setAnimateDirection('right');
-    setCurrentTip((currentTip + 1) % tips.length);
   };
 
   useEffect(() => {
@@ -96,11 +102,19 @@ const Demo: React.FC = () => {
       return;
     }
     const timer = setTimeout(() => {
-      nextTip();
-    }, 3000 + 600 + 600);
+      setCurrentTip((currentTip + 1) % tips.length);
+    }, 3800);
 
     return () => clearTimeout(timer);
   }, [currentTip, isShowTips]);
+
+  useEffect(() => {
+    if (animateDirection === 'left') {
+      setCurrentTip((currentTip - 1 + tips.length) % tips.length);
+    } else {
+      setCurrentTip((currentTip + 1) % tips.length);
+    }
+  }, [animateDirection]);
 
   return (
     <>
@@ -175,10 +189,10 @@ const Demo: React.FC = () => {
                             <motion.div
                               className="absolute"
                               key={`tip-${tip.id}`}
-                              initial={{ opacity: 0, translateX: animateDirection === "right" ? 40 : -40 }}
-                              animate={{ opacity: 1, translateX: 0, transition: { duration: 0.3, ease: 'easeOut', delay: 600 } }}
-                              exit={{ opacity: 0, translateX: animateDirection === "right" ? -40 : 40 }}
-                              transition={{ duration: 600, ease: 'easeOut' }}
+                              initial={{ opacity: 0, translateX: animateDirection === "right" ? 32 : -32 }}
+                              animate={{ opacity: 1, translateX: 0, transition: { duration: 0.4, ease: 'easeOut', delay: 0.4 } }}
+                              exit={{ opacity: 0, translateX: animateDirection === "right" ? -32 : 32 }}
+                              transition={{ duration: 0.4, ease: 'easeOut' }}
                             >
                               {tip.content}
                             </motion.div>
