@@ -1,22 +1,22 @@
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
+import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import AimIcon from "@/assets/icons/aim.svg";
-import DenoiserOnIcon from "@/assets/icons/denoiser-on.svg";
-import SidebarHelpIcon from "@/assets/icons/help.svg";
-import LeftMouseButton from "@/assets/icons/left-mouse-button.svg";
-import MouseWheelIcon from "@/assets/icons/mouse-wheel.svg";
-import RightMouseButton from "@/assets/icons/right-mouse-button.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import TipsDialog from "@/components/burrito-app/tips/TipsDialog";
-import TipsEmbed from "@/components/burrito-app/tips/TipsEmbed";
-import TipsPopover from "@/components/burrito-app/tips/TipsPopover";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import AimIcon from '@/assets/icons/aim.svg';
+import DenoiserOnIcon from '@/assets/icons/denoiser-on.svg';
+import SidebarHelpIcon from '@/assets/icons/help.svg';
+import LeftMouseButton from '@/assets/icons/left-mouse-button.svg';
+import MouseWheelIcon from '@/assets/icons/mouse-wheel.svg';
+import RightMouseButton from '@/assets/icons/right-mouse-button.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import TipsDialog from '@/components/burrito-app/tips/TipsDialog';
+import TipsEmbed from '@/components/burrito-app/tips/TipsEmbed';
+import TipsPopover from '@/components/burrito-app/tips/TipsPopover';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -49,12 +49,12 @@ const Demo: React.FC = () => {
   const [isTipsStepSevenVisible, setIsTipsStepSevenVisible] = useState(false);
   const [isTipsStepEightVisible, setIsTipsStepEightVisible] = useState(false);
   const [isTipsStepNineVisible, setIsTipsStepNineVisible] = useState(false);
-  
+
   const shakeControls = useAnimationControls();
   const startShake = () => {
     shakeControls.start({
       x: [0, 4, -4, 4, -4, 4, -4, 0],
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: 'easeOut' },
     });
   };
 
@@ -66,7 +66,7 @@ const Demo: React.FC = () => {
       <div className="flex flex-col">
         <div className="flex flex-col lg:-ml-44 lg:flex-row lg:gap-20">
           <Link
-            className="group mb-10 -mt-16 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
+            className="group -mt-16 mb-10 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
             href={'/'}
           >
             <IconArrowBack className="h-4 w-4" />
@@ -514,7 +514,7 @@ const Demo: React.FC = () => {
                   <span>{'at selected objects'}</span>
                 </span>
               </TipsPopover>
-              <div className="flex-col gap-8 items-center justify-center flex h-48 w-full">
+              <div className="flex h-48 w-full flex-col items-center justify-center gap-8">
                 <AnimatePresence>
                   {isTipsStepFourVisible && (
                     <>

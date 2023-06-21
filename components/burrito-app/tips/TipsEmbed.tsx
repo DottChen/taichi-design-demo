@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import { motion } from "framer-motion";
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
-import ChevronLeftIcon from "@/assets/icons/chevron-left.svg";
-import ChevronRightIcon from "@/assets/icons/chevron-right.svg";
-import GotItIcon from "@/assets/icons/got-it.svg";
-import SparkleIcon from "@/assets/icons/sparkle.svg";
-import Button from "@/components/burrito-ui/Button";
+import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
+import ChevronRightIcon from '@/assets/icons/chevron-right.svg';
+import GotItIcon from '@/assets/icons/got-it.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
+import Button from '@/components/burrito-ui/Button';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
 interface TipsEmbedProps {
   children: React.ReactNode;
@@ -39,7 +39,7 @@ export const TipsEmbed: React.FC<TipsEmbedProps> = ({
       className={clsx(
         styles.TipsContainer,
         className,
-        'flex h-fit w-full flex-col gap-6 px-3 pt-6 pb-3'
+        'flex h-fit w-full flex-col gap-6 px-3 pb-3 pt-6'
       )}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -72,14 +72,14 @@ export const TipsEmbed: React.FC<TipsEmbedProps> = ({
             <div className="flex items-center justify-end gap-2">
               <button
                 disabled={currentStep === 1}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:hover:bg-lime-300 disabled:active:bg-lime-300 disabled:opacity-40"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:opacity-40 disabled:hover:bg-lime-300 disabled:active:bg-lime-300"
                 onClick={onBack}
               >
                 <ChevronLeftIcon />
               </button>
               <button
                 disabled={currentStep === totalSteps}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:hover:bg-lime-300 disabled:active:bg-lime-300 disabled:opacity-40"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-300 text-black transition-colors duration-75 ease-out hover:bg-lime-400 active:bg-lime-500 disabled:opacity-40 disabled:hover:bg-lime-300 disabled:active:bg-lime-300"
                 onClick={onNext}
               >
                 <ChevronRightIcon />

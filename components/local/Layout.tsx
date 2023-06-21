@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Head>
         <link rel="icon" href="/images/portrait-rounded.png" />
       </Head>
-      <div className="mx-auto flex w-full max-w-2xl flex-col py-40 px-6">
+      <div className="mx-auto flex w-full max-w-2xl flex-col px-6 py-40">
         {children}
       </div>
     </>

@@ -29,9 +29,9 @@
     0px 4px 16px rgba(0, 0, 0, 0.02);
   --shadow-large: 0 30px 60px rgba(135, 56, 56, 0.12),
     0px 8px 20px rgba(0, 0, 0, 0.02);
-  --drop-shadow-sm: 0 0px 5px rgba(0, 0, 0, 0.30);
-  --drop-shadow-lg: 0 1px 8px rgba(0, 0, 0, 0.40);
-  --drop-shadow-2xl: 0 0px 50px rgba(0, 0, 0, 0.30)
+  --drop-shadow-sm: 0 0px 5px rgba(0, 0, 0, 0.3);
+  --drop-shadow-lg: 0 1px 8px rgba(0, 0, 0, 0.4);
+  --drop-shadow-2xl: 0 0px 50px rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -88,7 +88,7 @@
     0px 4px 16px rgba(0, 0, 0, 0.02);
   --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12),
     0px 8px 20px rgba(0, 0, 0, 0.02);
-  --drop-shadow-sm: 0 0px 5px rgba(0, 0, 0, 0.30);
-  --drop-shadow-lg: 0 1px 8px rgba(0, 0, 0, 0.40);
-  --drop-shadow-2xl: 0 0px 50px rgba(0, 0, 0, 0.30)
+  --drop-shadow-sm: 0 0px 5px rgba(0, 0, 0, 0.3);
+  --drop-shadow-lg: 0 1px 8px rgba(0, 0, 0, 0.4);
+  --drop-shadow-2xl: 0 0px 50px rgba(0, 0, 0, 0.3);
 }

@@ -1,19 +1,19 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import animationImg from "@/assets/images/animation.png";
-import environmentImg from "@/assets/images/environment.png";
-import importImg from "@/assets/images/import.png";
-import lightPresetImg from "@/assets/images/light-preset.png";
-import materialImg from "@/assets/images/material.png";
-import modelImg from "@/assets/images/model.png";
-import Tooltip from "@/components/burrito-app/sidebar-tooltip/Tooltip";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import animationImg from '@/assets/images/animation.png';
+import environmentImg from '@/assets/images/environment.png';
+import importImg from '@/assets/images/import.png';
+import lightPresetImg from '@/assets/images/light-preset.png';
+import materialImg from '@/assets/images/material.png';
+import modelImg from '@/assets/images/model.png';
+import Tooltip from '@/components/burrito-app/sidebar-tooltip/Tooltip';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page

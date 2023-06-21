@@ -23,7 +23,7 @@ const Demo: React.FC = () => {
       <div className="flex flex-col">
         <div className="flex flex-col lg:-ml-44 lg:flex-row lg:gap-20">
           <Link
-            className="group mb-10 -mt-16 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
+            className="group -mt-16 mb-10 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
             href={'/'}
           >
             <IconArrowBack className="h-4 w-4" />

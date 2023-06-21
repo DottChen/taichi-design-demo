@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import DemoItem from "@/components/local/DemoItem";
-import Divider from "@/components/local/Divider";
+import DemoItem from '@/components/local/DemoItem';
+import Divider from '@/components/local/Divider';
 
 export default function Home() {
   const description = `
@@ -54,6 +54,11 @@ export default function Home() {
             title="Keyboard Shortcut Panel"
             link="keyboard-shortcut-panel"
             date="2023/06/13"
+          />
+          <DemoItem
+            title="Loading Tips"
+            link="loading-tips"
+            date="2023/06/21"
           />
         </div>
       </main>

@@ -1,15 +1,15 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import keyboardUrl from "@/assets/images/keyboard.png";
-import * as BurritoButton from "@/components/burrito-ui/Button";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack, IconX } from "@tabler/icons-react";
+import keyboardUrl from '@/assets/images/keyboard.png';
+import * as BurritoButton from '@/components/burrito-ui/Button';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack, IconX } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -27,7 +27,7 @@ const Demo: React.FC = () => {
       <div className="flex flex-col">
         <div className="flex flex-col lg:-ml-44 lg:flex-row lg:gap-20">
           <Link
-            className="group mb-10 -mt-16 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
+            className="group -mt-16 mb-10 flex w-24 items-center gap-1 text-[var(--label-base)] transition duration-300 ease-out hover:text-[var(--label-title)] lg:mb-4 lg:mt-0"
             href={'/'}
           >
             <IconArrowBack className="h-4 w-4" />
@@ -48,21 +48,25 @@ const Demo: React.FC = () => {
           <AnimatePresence>
             {isShowPanel && (
               <motion.div
-              
                 // MARK: transition animation for the panel
                 initial={{ opacity: 0, x: -320 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -320, transition: { duration: 0.15, ease: "easeIn" } }}
+                exit={{
+                  opacity: 0,
+                  x: -320,
+                  transition: { duration: 0.15, ease: 'easeIn' },
+                }}
                 transition={{ duration: 0.2, ease: [0.45, 1, 0.68, 1] }}
                 // MARK: transition animation for the panel
 
-                className="absolute flex flex-col gap-6 p-4 left-0 top-0 bottom-0 w-80 bg-zinc-800 shadow-taipower-2xl overflow-hidden">
-                <div className="flex justify-between items-center">
+                className="absolute bottom-0 left-0 top-0 flex w-80 flex-col gap-6 overflow-hidden bg-zinc-800 p-4 shadow-taipower-2xl"
+              >
+                <div className="flex items-center justify-between">
                   <div className="text-base font-semibold leading-tight text-white">
-                    {"Shortcuts"}
+                    {'Shortcuts'}
                   </div>
                   <BurritoButton.default
-                    className="flex w-8 h-8 text-white justify-center items-center"
+                    className="flex h-8 w-8 items-center justify-center text-white"
                     onClick={() => {
                       setShowPanel(false);
                     }}
