@@ -20,6 +20,7 @@ const Demo: React.FC = () => {
     date: '2023/07/27',
   };
   const [response, setResponse] = useState(true);
+  const [loadingTime, setLoadingTime] = useState(0);
   const [isShowPanel, setShowPanel] = useState(false);
   const [isShowError, setIsShowError] = useState(false);
   const [isShowSuccess, setIsShowSuccess] = useState(false);
@@ -28,10 +29,10 @@ const Demo: React.FC = () => {
   const handleSubmit = async (response: boolean) => {
     setIsSubmitting(true);
     const res = await submitFunction(response);
+    setIsSubmitting(false);
     if (res) {
       setIsShowSuccess(true);
       setTimeout(() => {
-        setIsSubmitting(false);
         setIsShowSuccess(false);
         setShowPanel(false);
       }
@@ -39,7 +40,6 @@ const Demo: React.FC = () => {
     } else {
       setIsShowError(true);
       setTimeout(() => {
-        setIsSubmitting(false);
         setIsShowError(false);
         setShowPanel(false);
       }
@@ -52,7 +52,7 @@ const Demo: React.FC = () => {
       setTimeout(() => {
         resolve(response);
       }
-      , 1000);
+      , loadingTime);
     });
   };
 
@@ -99,7 +99,7 @@ const Demo: React.FC = () => {
                     className="absolute left-0 top-0 justify-center items-center flex h-14 w-full bg-black/90"
                   >
                     <AnimatePresence>
-                      {!isSubmitting && (
+                      {!isSubmitting && !isShowSuccess && !isShowError && (
                         <motion.div
                           initial={{ opacity: 1, scale: 1 }}
                           animate={{ opacity: 1, scale: 1 }}
@@ -171,23 +171,47 @@ const Demo: React.FC = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div className="absolute z-10 gap-8 flex items-center">
-                <Button
-                  isIcon={false}
-                  text={'Show Success Panel'}
-                  onClick={() => {
-                    setResponse(true);
-                    setShowPanel(true);
-                  }}
-                />
-                <Button
-                  isIcon={false}
-                  text={'Show Fail Panel'}
-                  onClick={() => {
-                    setResponse(false);
-                    setShowPanel(true);
-                  }}
-                />
+              <div className="absolute z-10 gap-8 flex-col flex items-center">
+                <div className="flex items-center gap-8">
+                  <Button
+                    isIcon={false}
+                    text={'Show Success Panel (Promise: 1s)'}
+                    onClick={() => {
+                      setLoadingTime(1000);
+                      setResponse(true);
+                      setShowPanel(true);
+                    }}
+                  />
+                  <Button
+                    isIcon={false}
+                    text={'Show Fail Panel (Promise: 1s)'}
+                    onClick={() => {
+                      setLoadingTime(1000);
+                      setResponse(false);
+                      setShowPanel(true);
+                    }}
+                  />
+                </div>
+                <div className="flex items-center gap-8">
+                  <Button
+                    isIcon={false}
+                    text={'Show Success Panel (Instant)'}
+                    onClick={() => {
+                      setLoadingTime(0);
+                      setResponse(true);
+                      setShowPanel(true);
+                    }}
+                  />
+                  <Button
+                    isIcon={false}
+                    text={'Show Fail Panel (Instant)'}
+                    onClick={() => {
+                      setLoadingTime(0);
+                      setResponse(false);
+                      setShowPanel(true);
+                    }}
+                  />
+                </div>
               </div>
               <div className="relative flex h-[448px] w-[760px] overflow-hidden">
                 <Image
