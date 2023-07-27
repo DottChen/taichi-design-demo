@@ -60,6 +60,11 @@ export default function Home() {
             link="loading-tips"
             date="2023/06/21"
           />
+          <DemoItem
+            title="TopBar Status Animation"
+            link="topbar-status-animation"
+            date="2023/07/27"
+          />
         </div>
       </main>
     </>

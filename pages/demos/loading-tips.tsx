@@ -1,18 +1,18 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-import IconDenoiserOn from "@/assets/icons/denoiser-on.svg";
-import IconSidebarHelp from "@/assets/icons/help.svg";
-import IconShortcutsLeft from "@/assets/icons/shortcuts-left.svg";
-import IconShortcutsRight from "@/assets/icons/shortcuts-right.svg";
-import IconWireframeHelper from "@/assets/icons/wireframe-helper.svg";
-import * as BurritoButton from "@/components/burrito-ui/Button";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import IconDenoiserOn from '@/assets/icons/denoiser-on.svg';
+import IconSidebarHelp from '@/assets/icons/help.svg';
+import IconShortcutsLeft from '@/assets/icons/shortcuts-left.svg';
+import IconShortcutsRight from '@/assets/icons/shortcuts-right.svg';
+import IconWireframeHelper from '@/assets/icons/wireframe-helper.svg';
+import * as BurritoButton from '@/components/burrito-ui/Button';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 interface Tip {
   id: number;
@@ -36,9 +36,7 @@ const Demo: React.FC = () => {
               <IconDenoiserOn />
             </span>
             <span>{' button on the bottom to toggle '}</span>
-            <span className="font-semibold text-lime-300">
-              {'Denoiser'}
-            </span>
+            <span className="font-semibold text-lime-300">{'Denoiser'}</span>
           </span>
         </div>
       ),
@@ -53,12 +51,10 @@ const Demo: React.FC = () => {
               <IconSidebarHelp />
             </span>
             <span>{' button on the bottom left corner for more '}</span>
-            <span className="font-semibold text-lime-300">
-              {'Help'}
-            </span>
+            <span className="font-semibold text-lime-300">{'Help'}</span>
           </span>
         </div>
-      )
+      ),
     },
     {
       id: 2,
@@ -75,12 +71,14 @@ const Demo: React.FC = () => {
             </span>
           </span>
         </div>
-      )
+      ),
     },
-  ]
+  ];
   const [isShowTips, setShowTips] = useState(false);
   const [currentTip, setCurrentTip] = useState(0);
-  const [animateDirection, setAnimateDirection] = useState<'left' | 'right'>('right');
+  const [animateDirection, setAnimateDirection] = useState<'left' | 'right'>(
+    'right'
+  );
 
   const previousTip = () => {
     // MARK: if the animation is already in the same direction, just change the tip, otherwise, set the animation direction and the animation will take effect afterwords
@@ -210,9 +208,25 @@ const Demo: React.FC = () => {
                             <motion.div
                               className="absolute"
                               key={`tip-${tip.id}`}
-                              initial={{ opacity: 0, translateX: animateDirection === "right" ? 32 : -32 }}
-                              animate={{ opacity: 1, translateX: 0, transition: { duration: 0.5, ease: 'easeOut', delay: 0.5 } }}
-                              exit={{ opacity: 0, translateX: animateDirection === "right" ? -32 : 32 }}
+                              initial={{
+                                opacity: 0,
+                                translateX:
+                                  animateDirection === 'right' ? 32 : -32,
+                              }}
+                              animate={{
+                                opacity: 1,
+                                translateX: 0,
+                                transition: {
+                                  duration: 0.5,
+                                  ease: 'easeOut',
+                                  delay: 0.5,
+                                },
+                              }}
+                              exit={{
+                                opacity: 0,
+                                translateX:
+                                  animateDirection === 'right' ? -32 : 32,
+                              }}
                               transition={{ duration: 0.5, ease: 'easeOut' }}
                             >
                               {tip.content}
@@ -233,7 +247,6 @@ const Demo: React.FC = () => {
                   </BurritoButton.default>
                 </div>
                 {/* Loading tips here! */}
-                
               </motion.div>
             )}
           </AnimatePresence>
