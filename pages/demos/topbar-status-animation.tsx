@@ -5,13 +5,14 @@ import Link from "next/link";
 import { useState } from "react";
 
 import IconFail from "@/assets/icons/fail.svg";
+import IconSpinner from "@/assets/icons/spinner.svg";
 import IconSuccess from "@/assets/icons/success.svg";
 import placeholderImg from "@/assets/images/placeholder.png";
 import * as BurritoButton from "@/components/burrito-ui/Button";
 import Button from "@/components/local/Button";
 import Divider from "@/components/local/Divider";
 import Footer from "@/components/local/Footer";
-import { IconArrowBack, IconLoader } from "@tabler/icons-react";
+import { IconArrowBack } from "@tabler/icons-react";
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -138,7 +139,7 @@ const Demo: React.FC = () => {
                           exit={{ opacity: 0, scale: 0.5 }}
                           transition={{ duration: 0.15, ease: easeOut }}
                           className="absolute flex items-center justify-center">
-                            <IconLoader className="h-4 w-4 text-white animate-spin" stroke={1.5} />
+                            <IconSpinner className="animate-spin" />
                         </motion.div>
                       )}
                     </AnimatePresence>
