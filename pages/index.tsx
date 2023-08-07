@@ -1,7 +1,7 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import DemoItem from '@/components/local/DemoItem';
-import Divider from '@/components/local/Divider';
+import DemoItem from "@/components/local/DemoItem";
+import Divider from "@/components/local/Divider";
 
 export default function Home() {
   const description = `
@@ -64,6 +64,11 @@ export default function Home() {
             title="TopBar Status Animation"
             link="topbar-status-animation"
             date="2023/07/27"
+          />
+          <DemoItem
+            title="ViewBox Button Jiggling"
+            link="viewbox-button-jiggling"
+            date="2023/08/07"
           />
         </div>
       </main>
