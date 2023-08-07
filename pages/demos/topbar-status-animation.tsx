@@ -1,18 +1,18 @@
-import { AnimatePresence, easeInOut, easeOut, motion } from "framer-motion";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { AnimatePresence, easeInOut, easeOut, motion } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import IconFail from "@/assets/icons/fail.svg";
-import IconSpinner from "@/assets/icons/spinner.svg";
-import IconSuccess from "@/assets/icons/success.svg";
-import placeholderImg from "@/assets/images/placeholder.png";
-import * as BurritoButton from "@/components/burrito-ui/Button";
-import Button from "@/components/local/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import IconFail from '@/assets/icons/fail.svg';
+import IconSpinner from '@/assets/icons/spinner.svg';
+import IconSuccess from '@/assets/icons/success.svg';
+import placeholderImg from '@/assets/images/placeholder.png';
+import * as BurritoButton from '@/components/burrito-ui/Button';
+import Button from '@/components/local/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -36,15 +36,13 @@ const Demo: React.FC = () => {
       setTimeout(() => {
         setIsShowSuccess(false);
         setShowPanel(false);
-      }
-      , 1000);
+      }, 1000);
     } else {
       setIsShowError(true);
       setTimeout(() => {
         setIsShowError(false);
         setShowPanel(false);
-      }
-      , 1000);
+      }, 1000);
     }
   };
 
@@ -52,11 +50,9 @@ const Demo: React.FC = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(response);
-      }
-      , loadingTime);
+      }, loadingTime);
     });
   };
-
 
   const handleCancel = () => {
     setShowPanel(false);
@@ -97,7 +93,7 @@ const Demo: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -56 }}
                     transition={{ duration: 0.2, ease: easeInOut }}
-                    className="absolute left-0 top-0 justify-center items-center flex h-14 w-full bg-black/90"
+                    className="absolute left-0 top-0 flex h-14 w-full items-center justify-center bg-black/90"
                   >
                     <AnimatePresence>
                       {!isSubmitting && !isShowSuccess && !isShowError && (
@@ -106,30 +102,31 @@ const Demo: React.FC = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.8 }}
                           transition={{ duration: 0.15, ease: easeOut }}
-                          className="flex items-center justify-center gap-5">
-                            <div className="text-sm font-semibold text-white">
-                              {'Are you sure to apply the light preset?'}
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <BurritoButton.default
-                                onClick={handleCancel}
-                                size="sm"
-                                type="secondary"
-                              >
-                                {'Cancel'}
-                              </BurritoButton.default>
-                              <BurritoButton.default
-                                onClick={() => {
-                                  handleSubmit(response);
-                                }}
-                                size="sm"
-                                type="primary"
-                              >
-                                {'Apply'}
-                              </BurritoButton.default>
-                            </div>
+                          className="flex items-center justify-center gap-5"
+                        >
+                          <div className="text-sm font-semibold text-white">
+                            {'Are you sure to apply the light preset?'}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <BurritoButton.default
+                              onClick={handleCancel}
+                              size="sm"
+                              type="secondary"
+                            >
+                              {'Cancel'}
+                            </BurritoButton.default>
+                            <BurritoButton.default
+                              onClick={() => {
+                                handleSubmit(response);
+                              }}
+                              size="sm"
+                              type="primary"
+                            >
+                              {'Apply'}
+                            </BurritoButton.default>
+                          </div>
                         </motion.div>
-                    )}
+                      )}
                     </AnimatePresence>
                     <AnimatePresence>
                       {isSubmitting && !isShowSuccess && !isShowError && (
@@ -138,8 +135,9 @@ const Demo: React.FC = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.5 }}
                           transition={{ duration: 0.15, ease: easeOut }}
-                          className="absolute flex items-center justify-center">
-                            <IconSpinner className="animate-spin" />
+                          className="absolute flex items-center justify-center"
+                        >
+                          <IconSpinner className="animate-spin" />
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -149,7 +147,11 @@ const Demo: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.5 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.5 }}
-                          transition={{ duration: 0.15, ease: easeOut, delay: 0.15 }}
+                          transition={{
+                            duration: 0.15,
+                            ease: easeOut,
+                            delay: 0.15,
+                          }}
                           className="absolute flex items-center justify-center"
                         >
                           <IconSuccess className="text-emerald-500" />
@@ -162,7 +164,11 @@ const Demo: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.5 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.5 }}
-                          transition={{ duration: 0.15, ease: easeOut, delay: 0.15 }}
+                          transition={{
+                            duration: 0.15,
+                            ease: easeOut,
+                            delay: 0.15,
+                          }}
                           className="absolute flex items-center justify-center"
                         >
                           <IconFail className="text-red-500" />
@@ -172,7 +178,7 @@ const Demo: React.FC = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div className="absolute z-10 gap-8 flex-col flex items-center">
+              <div className="absolute z-10 flex flex-col items-center gap-8">
                 <div className="flex items-center gap-8">
                   <Button
                     isIcon={false}

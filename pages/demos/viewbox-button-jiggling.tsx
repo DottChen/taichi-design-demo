@@ -1,13 +1,13 @@
-import { motion, useAnimationControls } from "framer-motion";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import { motion, useAnimationControls } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import placeholderImg from "@/assets/images/placeholder.png";
-import * as BurritoButton from "@/components/burrito-ui/Button";
-import Divider from "@/components/local/Divider";
-import Footer from "@/components/local/Footer";
-import { IconArrowBack } from "@tabler/icons-react";
+import placeholderImg from '@/assets/images/placeholder.png';
+import * as BurritoButton from '@/components/burrito-ui/Button';
+import Divider from '@/components/local/Divider';
+import Footer from '@/components/local/Footer';
+import { IconArrowBack } from '@tabler/icons-react';
 
 const Demo: React.FC = () => {
   // Edit this to change the metadata of the page
@@ -49,30 +49,27 @@ const Demo: React.FC = () => {
         <Divider />
         <section className="relative mt-24 flex h-[720px] flex-col items-center justify-center gap-8">
           {/* Edit here to change content*/}
-          <div className="absolute top-0 left-0 text-base font-semibold text-[var(--label-title)]">
+          <div className="absolute left-0 top-0 text-base font-semibold text-[var(--label-title)]">
             {'Click anywhere in the ViewBox to trigger the animation'}
           </div>
           <div className="group absolute flex h-[640px] w-[768px] flex-col items-center justify-center gap-5 overflow-hidden rounded-xl border border-[var(--bg-border)] bg-zinc-700">
             <div className="relative flex h-full w-full items-center justify-center">
-                <div
-                  className="absolute z-20 justify-center items-center flex h-14 w-full bg-black/90"
-                >
-                  <div className="flex flex-col items-center justify-between gap-10">
-                    <div className="text-base font-semibold leading-tight text-white">
-                      {"You have been inactive for a while. Click 'Resume' to continue rendering"}
-                    </div>
-                    <motion.div animate={shakeControls}>
-                      <BurritoButton.default
-                        size="lg"
-                        type="primary"
-                      >
-                        {'Resume'}
-                      </BurritoButton.default>
-                    </motion.div>
+              <div className="absolute z-20 flex h-14 w-full items-center justify-center bg-black/90">
+                <div className="flex flex-col items-center justify-between gap-10">
+                  <div className="text-base font-semibold leading-tight text-white">
+                    {
+                      "You have been inactive for a while. Click 'Resume' to continue rendering"
+                    }
                   </div>
+                  <motion.div animate={shakeControls}>
+                    <BurritoButton.default size="lg" type="primary">
+                      {'Resume'}
+                    </BurritoButton.default>
+                  </motion.div>
                 </div>
+              </div>
               <div
-                className="z-10 absolute h-full w-full bg-black/70"
+                className="absolute z-10 h-full w-full bg-black/70"
                 onClick={() => {
                   startShake();
                 }}
